@@ -1,0 +1,33 @@
+.mainContainer{
+    
+    border: 1px solid red;
+}
+
+.container1{
+    height: 278px;
+    background-color: pink;
+}
+.container2{
+    height: 278px;
+    background-color: red;
+}
+.container3{
+    height: 278px;
+    background-color: blue;
+}
+.container4{
+    height: 278px;
+    background-color: orange;
+}
+.container5{
+    height: 278px;
+    background-color: green;
+}
+
+p{
+    margin-top: 0;
+}
+
+.textButtonContainer{
+    padding-top: 180px;
+}
