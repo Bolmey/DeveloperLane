@@ -1,0 +1,35 @@
+.peri-container {
+    width: 100vw;
+}
+
+
+.container-switch {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.product-container {
+    width: 25%;
+    height: 30vw;
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+}
+
+
+
+
+
+
+@media only screen and (min-width: 768px) {
+
+
+
+
+    .container-switch {
+        flex-direction: row;
+    }
+
+
+}

@@ -24,20 +24,20 @@ function Navbar(props) {
 
 
                     <nav class="menu1">
-                        <a class="link1" >Bundles</a>
-                        <a class="link1" >Computers</a>
-                        <a class="link1" >Monitors</a>
-                        <a class="link1" >Peripherals</a>
-                        <a class="link1" >Chairs</a>
+                        <a class="link1" ><Link to="/bundles"> Bundles </Link></a>
+                        <a class="link1" ><Link to="/computers"> Computers </Link></a>
+                        <a class="link1" ><Link to="/monitors"> Monitors </Link></a>
+                        <a class="link1" ><Link to="/peripherals"> Peripherals </Link></a>
+                        <a class="link1" ><Link to="/chairs"> Chairs </Link></a>
                     </nav>
 
                     <nav class="desktopMenu1">
-                        <div className="desktopLogoNav">Logoo</div>
-                        <a class="link1" >Bundles</a>
-                        <a class="link1" >Computers</a>
-                        <a class="link1" >Monitors</a>
-                        <a class="link1" >Peripherals</a>
-                        <a class="link1" >Chairs</a>
+                        <div className="desktopLogoNav"><Link to="/"> Logoo </Link></div>
+                        <a class="link1" ><Link to="/bundles"> Bundles </Link></a>
+                        <a class="link1" ><Link to="/computers"> Computers </Link></a>
+                        <a class="link1" ><Link to="/monitors"> Monitors </Link></a>
+                        <a class="link1" > <Link to="/peripherals"> Peripherals </Link></a>
+                        <a class="link1" > <Link to="/chairs"> Chairs </Link></a>
                     </nav>
                 </div>
             </nav>
