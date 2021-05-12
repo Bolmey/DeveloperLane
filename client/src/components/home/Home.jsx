@@ -11,7 +11,7 @@ function Home(props) {
             <div className="container1">
                 <div className="textButtonContainer">
                     <div className="container1Text">
-                        <p>Bundles to Optimize<br /> Your Battle Station</p>
+                        <p>Bundles to Optimize!<br /> Your Battle Station</p>
                     </div>
                     <div className="buttonContainer1">
                         <button className="container1Button">See More</button>
