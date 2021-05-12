@@ -1,6 +1,6 @@
 import React from 'react';
 import './home.css'
-import actions from './api'
+import actions from '../../api'
 
 function Home(props) {
 
