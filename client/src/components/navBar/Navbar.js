@@ -12,20 +12,34 @@ function Navbar(props) {
     return (
         <div>
             <nav id="navbar" class="navigation" role="navigation">
-                <input id="toggle1" type="checkbox" />
-                <label class="hamburger1" for="toggle1">
-                    <div class="top"></div>
-                    <div class="meat"></div>
-                    <div class="bottom"></div>
-                </label>
+                <div className="logoNav">Logoo</div>
+                <div className="textContainer">
+                    <input id="toggle1" type="checkbox" />
+                    <label class="hamburger1" for="toggle1">
+                        <div class="top"></div>
+                        <div class="meat"></div>
+                        <div class="bottom"></div>
+                    </label>
 
-                <nav class="menu1">
-                    <a class="link1" >Bundles</a>
-                    <a class="link1" >Computers</a>
-                    <a class="link1" >Monitors</a>
-                    <a class="link1" >Peripherals</a>
-                    <a class="link1" >Chairs</a>
-                </nav>
+
+
+                    <nav class="menu1">
+                        <a class="link1" >Bundles</a>
+                        <a class="link1" >Computers</a>
+                        <a class="link1" >Monitors</a>
+                        <a class="link1" >Peripherals</a>
+                        <a class="link1" >Chairs</a>
+                    </nav>
+
+                    <nav class="desktopMenu1">
+                        <div className="desktopLogoNav">Logoo</div>
+                        <a class="link1" >Bundles</a>
+                        <a class="link1" >Computers</a>
+                        <a class="link1" >Monitors</a>
+                        <a class="link1" >Peripherals</a>
+                        <a class="link1" >Chairs</a>
+                    </nav>
+                </div>
             </nav>
         </div >
 
