@@ -1,7 +1,11 @@
 import React from 'react';
 import './home.css'
+import actions from './api'
 
 function Home(props) {
+
+
+
     return (
         <div className="mainContainer">
             <div className="container1">
