@@ -5,7 +5,9 @@
 
 .container1{
     height: 278px;
-    background-color: pink;
+    background-image: url('../../imgs/firstcontainer.png');
+    background-position: center;
+    background-size: cover;
 }
 .container2{
     height: 278px;

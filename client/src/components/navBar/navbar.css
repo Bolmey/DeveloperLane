@@ -10,7 +10,11 @@
   .logoNav{
     position:absolute;
     padding-left: 15px;
+    height: 55px;
+    width: 70px;
+    background-color: green;
   }
+  
   .desktopMenu1{
     display: none;
   }
