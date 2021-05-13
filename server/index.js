@@ -11,7 +11,7 @@ app.use(cors())
 
 
 mongoose
-    .connect(process.env.MONGODB_URI || 'mongodb://localhost/DeveloperLane', { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(process.env.MONGODB_URI || 'mongodb+srv://Jonny:admin123@cluster0.0dwvo.mongodb.net/DeveloperLane?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(x => console.log(`Connected to ${x.connections[0].name}`))
     .catch(() => console.error("Error connecting to Mongo"))
 
