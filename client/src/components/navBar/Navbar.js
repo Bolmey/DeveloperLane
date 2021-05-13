@@ -7,6 +7,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import './navbar.css'
+import Actions from '../../api'
+
 
 function NavBar(props) {
   const [showModal, setShowModal] = useState(false);
@@ -14,6 +16,14 @@ function NavBar(props) {
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    Actions.signUp({ email, password }).then((res) => console.log(res))
+
+  }
 
   return (
     <Navbar className='whole-navbar' bg="dark" variant="dark" expand="lg">
@@ -49,9 +59,31 @@ function NavBar(props) {
 
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Sign In</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group size="lg" controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                autoFocus
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+
+              />
+            </Form.Group>
+            <Form.Group size="lg" controlId="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+            <Button block size="lg" type="submit" >
+              Login
+        </Button>
+          </Form>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

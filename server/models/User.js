@@ -4,6 +4,7 @@ const userSchema = new Schema({
 
     imageUrl: String,
     email: { type: String, unique: true },
+    password: String,
     name: String,
     googleId: String
 
