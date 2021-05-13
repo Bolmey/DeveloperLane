@@ -16,7 +16,6 @@ function Home(props) {
                     <div className="buttonContainer1">
                         <button className="container1Button">See Bundles</button>
                         <button className="container1Button">See SOmething</button>
-                        <div className='downArrow'>\/</div>
                     </div>
                 </div>
             </div>
@@ -28,7 +27,6 @@ function Home(props) {
                     <div className="buttonContainer2">
                         <button className="container2Button">See PC</button>
                         <button className="container2Button">See Mac</button>
-                        <div className='downArrow'>\/</div>
                     </div>
                 </div>
             </div>
@@ -40,7 +38,6 @@ function Home(props) {
                     <div className="buttonContainer3">
                         <button className="container3Button">See Monitors</button>
                         <button className="container3Button">See Something</button>
-                        <div className='downArrow'>\/</div>
                     </div>
                 </div>
             </div>
@@ -52,7 +49,6 @@ function Home(props) {
                     <div className="buttonContainer4">
                         <button className="container4Button">See Keyboards</button>
                         <button className="container4Button">See Mice</button>
-                        <div className='downArrow'>\/</div>
                     </div>
                 </div>
             </div>
@@ -64,7 +60,6 @@ function Home(props) {
                     <div className="buttonContainer5">
                         <button className="container5Button">See Chairs</button>
                         <button className="container5Button">See Something</button>
-                        <div className='downArrow'>\/</div>
                     </div>
                 </div>
             </div>

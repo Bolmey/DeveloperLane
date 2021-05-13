@@ -9,7 +9,7 @@ import Home from './components/home/Home';
 import Login from './components/login/Login';
 import Monitor from './components/monitor/Monitor';
 import Peripherals from './components/peripherals/Peripherals';
-import Navbar from './components/navBar/Navbar'
+import NavBar from './components/navBar/Navbar'
 
 import actions from './api'
 import TheContext from './TheContext'
@@ -43,7 +43,7 @@ function App() {
   return (
     <div className="App">
 
-      <Navbar />
+      <NavBar />
 
       <Switch>
         <Route exact path="/" component={Home} />
@@ -54,7 +54,7 @@ function App() {
         <Route exact path="/peripherals" component={Peripherals} />
         <Route exact path="/bundles" component={Bundles} />
         {/* Erase and put navbar on every page */}
-        <Route exact path="/navbar" component={Navbar} />
+        <Route exact path="/navbar" component={NavBar} />
       </Switch>
 
     </div>

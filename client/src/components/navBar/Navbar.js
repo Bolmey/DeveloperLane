@@ -1,49 +1,68 @@
-import React from 'react';
-import './navbar.css';
-import { Route, Switch, Link } from 'react-router-dom';
-import Bundles from '../bundles/Bundles';
-import Chairs from '../chairs/Chair';
-import Computers from '../computers/Computer';
+import React, { useState } from 'react';
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
+import './navbar.css'
 
-import Monitor from '../monitor/Monitor';
-import Peripherals from '../peripherals/Peripherals';
+function NavBar(props) {
+  const [showModal, setShowModal] = useState(false);
 
-function Navbar(props) {
-    return (
-        <div>
-            <nav id="navbar" class="navigation" role="navigation">
-                <div className="logoNav">Logoo</div>
-                <div className="textContainer">
-                    <input id="toggle1" type="checkbox" />
-                    <label class="hamburger1" for="toggle1">
-                        <div class="top"></div>
-                        <div class="meat"></div>
-                        <div class="bottom"></div>
-                    </label>
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
 
 
+  return (
+    <Navbar className='whole-navbar' bg="dark" variant="dark" expand="lg">
+      <Navbar.Brand className='navbar-img' href="/">
+        <img
+          alt=""
+          src="./assets/logo.png"
+          width="40"
+          height="40"
+          className="d-inline-block align-top"
+        />{' '}
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto navbar-links">
+          <Nav.Link href="/bundles">Bundles</Nav.Link>
+          <Nav.Link href="/computers">Computers</Nav.Link>
+          <Nav.Link href="/monitors">Monitors</Nav.Link>
+          <Nav.Link href="/peripherals">Peripherals</Nav.Link>
+          <Nav.Link href="/chairs">Chairs</Nav.Link>
+          {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+          </NavDropdown> */}
+          <Button className="login-button" variant="secondary" onClick={handleShow}>
+            Login / Sign Up
+      </Button>
+        </Nav>
+      </Navbar.Collapse>
 
-                    <nav class="menu1">
-                        <a class="link1" ><Link to="/bundles"> Bundles </Link></a>
-                        <a class="link1" ><Link to="/computers"> Computers </Link></a>
-                        <a class="link1" ><Link to="/monitors"> Monitors </Link></a>
-                        <a class="link1" ><Link to="/peripherals"> Peripherals </Link></a>
-                        <a class="link1" ><Link to="/chairs"> Chairs </Link></a>
-                    </nav>
-
-                    <nav class="desktopMenu1">
-                        <div className="desktopLogoNav"><Link to="/"> Logoo </Link></div>
-                        <a class="link1" ><Link to="/bundles"> Bundles </Link></a>
-                        <a class="link1" ><Link to="/computers"> Computers </Link></a>
-                        <a class="link1" ><Link to="/monitors"> Monitors </Link></a>
-                        <a class="link1" > <Link to="/peripherals"> Peripherals </Link></a>
-                        <a class="link1" > <Link to="/chairs"> Chairs </Link></a>
-                    </nav>
-                </div>
-            </nav>
-        </div >
-
-    );
+      <Modal show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </Navbar>
+  );
 }
 
-export default Navbar;
+export default NavBar;
