@@ -6,14 +6,24 @@
   .p-menu1{
      height: 100%;
   }
+
+  .mainContainer{
+    border:none;
+  }
   
+  .navigation{
+    display:flex;
+    justify-content:space-between;
+    background-color: black;
+  }
+
   .logoNav{
     position:absolute;
-    padding-left: 15px;
     height: 55px;
     width: 70px;
-    background-color: green;
-  }
+    background-image: url("../../imgs/logo.png");
+    background-size: cover;
+    }
   
   .desktopMenu1{
     display: none;
@@ -39,6 +49,7 @@
     margin-top: 7px;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+    background-color: white;
   }
   
   #toggle1 {
@@ -88,6 +99,10 @@
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
+
+  .textContainer{
+    width: 100vw;
+  }
   
   .menu1 a:first-child {
     margin-top: 10px;
@@ -129,10 +144,6 @@
      display: none;
    }
 
-   .logoNav{
-     display: none;
-   }
-
    .hamburger1 {
     display: none;
    }
@@ -143,4 +154,12 @@
     background-color: black;
     height: 55px;
    }
+
+   .logoNav{
+     position: inherit;
+    height: 55px;
+    width: 70px;
+    background-image: url("../../imgs/logo.png");
+    background-size: cover;
+    }
   }

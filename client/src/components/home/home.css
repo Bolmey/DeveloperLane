@@ -3,11 +3,16 @@
     border: 1px solid red;
 }
 
+.container1Text{
+    margin-bottom: -15px;
+}
+
 .container1Button, .container2Button, .container3Button, .container4Button, .container5Button{
     background-color: #555454;
     border: none;
     color: white;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .buttonContainer1, .buttonContainer2, .buttonContainer3, .buttonContainer4, .buttonContainer5{
@@ -72,5 +77,5 @@ p{
 }
 
 .textButtonContainer{
-    padding-top: 180px;
+    padding-top: 160px;
 }

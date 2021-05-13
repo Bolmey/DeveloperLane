@@ -12,7 +12,7 @@ function Navbar(props) {
     return (
         <div>
             <nav id="navbar" class="navigation" role="navigation">
-                <div className="logoNav">Logoo</div>
+                <div className="logoNav"></div>
                 <div className="textContainer">
                     <input id="toggle1" type="checkbox" />
                     <label class="hamburger1" for="toggle1">
@@ -32,7 +32,7 @@ function Navbar(props) {
                     </nav>
 
                     <nav class="desktopMenu1">
-                        <div className="desktopLogoNav"><Link to="/"> Logoo </Link></div>
+
                         <a class="link1" ><Link to="/bundles"> Bundles </Link></a>
                         <a class="link1" ><Link to="/computers"> Computers </Link></a>
                         <a class="link1" ><Link to="/monitors"> Monitors </Link></a>
