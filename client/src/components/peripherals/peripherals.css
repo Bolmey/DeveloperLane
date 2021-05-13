@@ -1,6 +1,6 @@
 .peri-container {
-    width: 60vw;
-    height: 100vw;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,18 +8,17 @@
     background-color: black;
 }
 
-
 .container-switch {
     display: flex;
     width: 100%;
-    height: 50vw;
+    height: 70vw;
     margin: 1vw;
     justify-content: center;
     align-items: center;
 }
 
 .product-container {
-    width: 30%;
+    width: 40%;
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -37,25 +36,98 @@
     color: white;
 }
 
+
+
+.product-nameSpecs{
+    height: 70%;
+}
+
+.product-nameSpecs h2 {
+    font-size: 12px;
+}
+
+.product-details li {
+    font-size: 8px;
+    list-style: none;
+}
+
+
 .product-image {
     width: 100%;
     height: 55%;
 }
 
 .buyButton {
-    height: 1rem;
-    width: 2rem;
+    font-size: 10px;
+    height: 90%;
+    width: 30%;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.8); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.8);
+}
+
+.mainBuyButton {
+    height: 90%;
+    width: 30%;
     -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.8); 
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.8);
 }
 
 .priceAndButton {
     width: 100%;
-    height: 20%;
+    height: 30%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+}
+
+.priceAndButton h6 {
+    font-size: 10px;
+}
+
+.mainPriceAndButton {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mainPriceAndButton h6 {
+    font-size: 14px;
+}
+
+.mainProduct-container {
+    width: 90%;
+    height: 80vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #161616;
+    margin: 1vw;
+    text-align: left;
+}
+
+.mainProduct-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 45%;
+    color: white;
+}
+
+.mainProduct-nameSpecs {
+    justify-content: center;
+}
+
+.mainProduct-image {
+    height: 60%;
+}
+
+.mainProduct-details li {
+    font-size: 12px;
+    list-style: none;
 }
 
 
@@ -70,5 +142,15 @@
         -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.8); 
         box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.8);
     }
+
+    .product-details li {
+        font-size: 18px;
+    }
+
+
+    .peri-container {
+        width: 60vw;
+    }
+
 
 }
