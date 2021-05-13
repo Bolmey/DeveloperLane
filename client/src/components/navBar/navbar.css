@@ -16,7 +16,17 @@
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
+    /* margin: 0;
+    padding: 10px 0;
+    font: 700 20px 'Oswald', sans-serif; */
   }
+
+  /* .link1:hover {
+    background-color: rgb(100, 43, 191);
+    color: rgb(61, 61, 61);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  } */
 
 
   .navbar-img {
