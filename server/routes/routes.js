@@ -18,7 +18,9 @@ router.get(`/get-user`, authorize, async (req, res) => {
 })
 
 
-
+router.post('/signUp', (req, res) => {
+    console.log(req.body)
+})
 
 
 router.get(`/get-messages`, (req, res) => {
@@ -35,13 +37,19 @@ router.get(`/`, (req, res) => {
 })
 
 router.post(`/logMeIn`, async (req, res) => {
-
+    console.log(req.body)
     //Find user
     let user = await User.findOne({ email: req.body.email })
-
+    console.log(user)
     //If no user >> Create User
     if (!user) {
         user = await User.create(req.body)
+    } else {
+        if (req.body.password === user.password) {
+
+        } else {
+            res.json({ error: "passwords dont match" })
+        }
     }
 
     //No matter what i have a user and now I can create the jwt token 

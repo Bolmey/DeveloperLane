@@ -31,10 +31,16 @@ const actions = {
         return await axios.post(`${serverUrl}/add-message`, { message }, createHeaders())
     },
 
-    logIn: async ({ profileObj }) => {
-        let res = await axios.post(`${serverUrl}/logMeIn`, profileObj)
+    // logIn: async ({ profileObj }) => {
+    //     let res = await axios.post(`${serverUrl}/logMeIn`, profileObj)
+    //     localStorage.setItem('token', res.data.token)
+    //     return res.data.user
+    // },
+
+    signUp: async ({ email, password }) => {
+        let res = await axios.post(`${serverUrl}/logMeIn`, { email, password })
         localStorage.setItem('token', res.data.token)
-        return res.data.user
+        return (res.data)
     }
 
 
