@@ -3,6 +3,8 @@ import axios from "axios";
 import './peripherals.css'
 
 const imgsrc = 'https://media.wired.com/photos/5f862593a50a226585bee266/16:9/w_2399,h_1349,c_limit/Gear-Keyboard-452883322.jpg'
+const mainImgSrc = 'https://durabilitymatters.com/wp-content/uploads/2019/12/computer-keyboard-for-programmers-wp.jpg'
+
 
 function Peripherals(props) {
 
@@ -23,17 +25,18 @@ function Peripherals(props) {
 
 
             <div className="mainProduct-container">
-                <img className="mainProduct-image" src={imgsrc} />
+                <img className="mainProduct-image" src={mainImgSrc} />
                 <div className="mainProduct-details">
                     <div className="mainProduct-nameSpecs">
-                        <h2>Product.name</h2>
-                        <li>product.specs1</li>
-                        <li>product.specs2</li>
-                        <li>product.specs3</li>
+                        <h2>Razer BlackWidow Elite</h2>
+                        <li>Mechanical keyboard</li>
+                        <li>designed specifically for gaming</li>
+                        <li>features speed and responsiveness like never before</li>
+                        <li>for a more unfair advantage.</li>
                     </div>
                     <div className="mainPriceAndButton">
                         <h6>999.99$</h6>
-                        <button className="mainBuyButton">Buy</button>
+                        <button className="mainBuyButton">Add To Cart</button>
                     </div>
                 </div>
             </div>
@@ -51,7 +54,7 @@ function Peripherals(props) {
                         </div>
                         <div className="priceAndButton">
                             <h6>50.99$</h6>
-                            <button className="buyButton">Buy</button>
+                            <button className="buyButton">Add To Cart</button>
                         </div>
                     </div>
                 </div>
