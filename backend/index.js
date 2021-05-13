@@ -4,16 +4,20 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 
 
+
+app.use(express.json())
+app.use(cors())
+
+
+
 mongoose
-    .connect(process.env.MONGODB_URI || 'mongodb://localhost/HackerBlog', { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(process.env.MONGODB_URI || 'mongodb://localhost/DeveloperLane', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(x => console.log(`Connected to ${x.connections[0].name}`))
     .catch(() => console.error("Error connecting to Mongo"))
 
 
-app.use(express.json())
 
-app.use(cors())
-
+app.get("/getPeripherals", (req, res) => Blog.find().then((response) => res.json(response)));
 
 app.use('/api', require('./routes/routes.js'))
 

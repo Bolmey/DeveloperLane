@@ -5,13 +5,12 @@
     flex-direction: column;
     align-items: center;
     align-self: center;
-    border: 1px solid red;
+    background-color: black;
 }
 
 
 .container-switch {
     display: flex;
-    flex-direction: column;
     width: 100%;
     height: 50vw;
     margin: 1vw;
@@ -24,8 +23,18 @@
     height: 90%;
     display: flex;
     flex-direction: column;
-    background-color: blue;
+    background-color: #161616;
     margin: 1vw;
+    text-align: left;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 45%;
+    color: white;
 }
 
 .product-image {
@@ -33,6 +42,21 @@
     height: 55%;
 }
 
+.buyButton {
+    height: 1rem;
+    width: 2rem;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.8); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.8);
+}
+
+.priceAndButton {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
 
 
 
@@ -40,6 +64,11 @@
 @media only screen and (min-width: 768px) {
 
 
-
+    .buyButton {
+        height: 2rem;
+        width: 4rem;
+        -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.8); 
+        box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.8);
+    }
 
 }
