@@ -120,7 +120,7 @@
   }
   
   .link1:hover {
-    background-color: #fff;
+    background-color: rgb(100, 43, 191);
     color: rgb(61, 61, 61);
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
