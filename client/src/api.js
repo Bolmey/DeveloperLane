@@ -3,7 +3,7 @@ import axios from 'axios'
 
 console.log(process.env)
 //Where your server/backend lives
-const serverUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_SERVER_URL : `http://localhost:5000/api`
+const serverUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_SERVER_URL : `mongodb+srv://admin123:admin123@cluster0.hhdrc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 
 const createHeaders = () => {
     return {
