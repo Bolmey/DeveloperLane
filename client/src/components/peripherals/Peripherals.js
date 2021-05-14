@@ -61,24 +61,27 @@ function Peripherals(props) {
 
 
 
-    displayOtherProducts() {
-        <div className="container-switch">
-            <div className="product-container">
-                <img className="product-image" src={imgsrc} />
-                <div className="product-details">
-                    <div className="product-nameSpecs">
-                        <h2>Product.name</h2>
-                        <li>product.specs1</li>
-                        <li>product.specs2</li>
-                        <li>product.specs3</li>
-                    </div>
-                    <div className="priceAndButton">
-                        <h6>50.99$</h6>
-                        <button className="buyButton">Add To Cart</button>
+    function displayOtherProducts() {
+        return (
+            products.map((product) => {
+                <div className="container-switch">
+                    <div className="product-container">
+                        <img className="product-image" src={imgsrc} />
+                        <div className="product-details">
+                            <div className="product-nameSpecs">
+                                <h2>product.name</h2>
+                                <h5>product.rating</h5>
+                                <p>product.description</p>
+                            </div>
+                            <div className="priceAndButton">
+                                <h6>product.price</h6>
+                                <button className="buyButton">Add To Cart</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            })
+        )
     }
 
 
