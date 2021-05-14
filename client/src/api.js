@@ -3,7 +3,7 @@ import axios from 'axios'
 
 console.log(process.env)
 //Where your server/backend lives
-const serverUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_SERVER_URL : `mongodb+srv://admin123:admin123@cluster0.hhdrc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+const serverUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_SERVER_URL : `http://localhost:5000`
 
 const createHeaders = () => {
     return {
@@ -29,6 +29,11 @@ const actions = {
     },
     addMessage: async ({ message }) => {
         return await axios.post(`${serverUrl}/add-message`, { message }, createHeaders())
+    },
+
+    getKeyboards: async () => {
+        let keyboards = await axios.get(`${serverUrl}/get-keyboards`)
+        return keyboards.data
     },
 
     // logIn: async ({ profileObj }) => {

@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const router = express.Router()
 const Message = require('../models/Message')
 const User = require('../models/User')
+const Keyboards = require('../models/Keyboards')
 
 
 router.post(`/add-message`, authorize, (req, res) => {
@@ -34,6 +35,12 @@ router.get(`/get-my-messages`, authorize, (req, res) => {
 
 router.get(`/`, (req, res) => {
     res.json({ serverWorks: true })
+})
+
+router.get('/get-keyboards', async (req, res) => {
+    let keyboards = await Keyboards.find();
+    console.log(keyboards)
+    res.json(keyboards)
 })
 
 router.post(`/logMeIn`, async (req, res) => {
