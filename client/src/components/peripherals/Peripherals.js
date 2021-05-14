@@ -108,7 +108,7 @@ function Peripherals(props) {
 
             {displayOtherProducts()}
 
-
+        </div>
     );
 }
 
