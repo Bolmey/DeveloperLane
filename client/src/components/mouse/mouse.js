@@ -1,14 +1,14 @@
 import React from 'react';
 import actions from '../../api'
-import './computer.css'
+import './mouse.css'
 
 
-function Computer(props) {
+function Mouse(props) {
     return (
         <div>
-            <div>Computer Page</div>
+            <div>Mouse Page</div>
         </div>
     );
 }
 
-export default Computer;
+export default Mouse;

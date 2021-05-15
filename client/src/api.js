@@ -31,10 +31,64 @@ const actions = {
         return await axios.post(`${serverUrl}/add-message`, { message }, createHeaders())
     },
 
-    getKeyboards: async () => {
-        let keyboards = await axios.get(`${serverUrl}/get-keyboards`)
+
+
+
+
+    // ---- Products ---- //
+
+    // PCs
+    getMainPC: async () => {
+        let PC = await axios.get(`${serverUrl}/get-main-PC`)
+        return PC.data
+    },
+    getOtherPCs: async () => {
+        let PCs = await axios.get(`${serverUrl}/get-other-PCs`)
+        return PCs.data
+    },
+
+    // Mouse
+    getMainMouse: async () => {
+        let mouse = await axios.get(`${serverUrl}/get-main-mouse`)
+        return mouse.data
+    },
+    getOtherMouse: async () => {
+        let mouse = await axios.get(`${serverUrl}/get-other-mouse`)
+        return mouse.data
+    },
+
+    // Chairs
+    getMainChair: async () => {
+        let chair = await axios.get(`${serverUrl}/get-main-chair`)
+        return chair.data
+    },
+    getOtherChairs: async () => {
+        let chairs = await axios.get(`${serverUrl}/get-other-chairs`)
+        return chairs.data
+    },
+
+    // Monitors
+    getMainMonitor: async () => {
+        let monitor = await axios.get(`${serverUrl}/get-main-monitor`)
+        return monitor.data
+    },
+    getOtherMonitors: async () => {
+        let monitors = await axios.get(`${serverUrl}/get-other-monitors`)
+        return monitors.data
+    },
+
+    // Keyboards
+    getMainKeyboard: async () => {
+        let keyboard = await axios.get(`${serverUrl}/get-main-keyboard`)
+        return keyboard.data
+    },
+    getOtherKeyboards: async () => {
+        let keyboards = await axios.get(`${serverUrl}/get-other-keyboards`)
         return keyboards.data
     },
+
+
+
 
     // logIn: async ({ profileObj }) => {
     //     let res = await axios.post(`${serverUrl}/logMeIn`, profileObj)

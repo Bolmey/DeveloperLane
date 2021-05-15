@@ -1,15 +1,9 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import './peripherals.css'
 import actions from '../../api'
 
-const imgsrc = 'https://media.wired.com/photos/5f862593a50a226585bee266/16:9/w_2399,h_1349,c_limit/Gear-Keyboard-452883322.jpg'
-const mainImgSrc = 'https://durabilitymatters.com/wp-content/uploads/2019/12/computer-keyboard-for-programmers-wp.jpg'
-
 
 function Peripherals(props) {
-
-    const [products, setProducts] = useState([])
 
     const [mainProduct, setMainProduct] = useState([])
     const [otherProducts, setOtherProducts] = useState([])
@@ -21,65 +15,44 @@ function Peripherals(props) {
     //.then(() => console.log(products))
 
     useEffect(() => {
-        actions.getKeyboards()
-            .then((res) => setProducts(res))
-            .then(() => setMainProduct(products))
+        actions.getMainKeyboard()
+            .then((res) => setMainProduct(res[0]))
+
+        actions.getOtherKeyboards()
+            .then((res) => setOtherProducts(res))
+
+
 
     }, []);
 
 
 
-    console.log(mainProduct)
-    console.log(products)
-    //.then(async () => await fillOtherProducts())
-
-    // function fillOtherProducts() {
-    //     console.log("test")
-    //     let arr = []
-    //     for (let i = 0; i < products.length; i++) {
-
-    //         if (i < 1) {
-    //             setMainProduct(products[0])
-    //             console.log("Main zz", mainProduct)
-    //         } else {
-    //             arr.push(products[i])
-    //         }
-    //     }
-    //     console.log("arr", arr)
-    //     setOtherProducts(arr)
-    //     console.log("Other zz ", otherProducts)
-    // }
-
-    // console.log(products)
-    // console.log("Main ", mainProduct)
-    // console.log("Other ", otherProducts)
 
 
-
-
-
-
+    //console.log(otherProducts[0].name);
 
 
     function displayOtherProducts() {
         return (
-            products.map((product) => {
-                <div className="container-switch">
+            otherProducts.map((product, i) => {
+                return (
+
                     <div className="product-container">
-                        <img className="product-image" src={imgsrc} />
+                        <img className="product-image" src={otherProducts[i].image} />
                         <div className="product-details">
                             <div className="product-nameSpecs">
-                                <h2>product.name</h2>
-                                <h5>product.rating</h5>
-                                <p>product.description</p>
+                                <h2>{otherProducts[i].name}</h2>
+                                <h5>{otherProducts[i].rating}</h5>
+                                <p>{otherProducts[i].description}</p>
                             </div>
                             <div className="priceAndButton">
-                                <h6>product.price</h6>
+                                <h6>${otherProducts[i].price}</h6>
                                 <button className="buyButton">Add To Cart</button>
                             </div>
                         </div>
                     </div>
-                </div>
+
+                )
             })
         )
     }
@@ -92,25 +65,23 @@ function Peripherals(props) {
 
 
             <div className="mainProduct-container">
-                <img className="mainProduct-image" src={mainImgSrc} />
+                <img className="mainProduct-image" src={mainProduct.image} />
                 <div className="mainProduct-details">
                     <div className="mainProduct-nameSpecs">
-                        <h2>name</h2>
-                        <li>Mechanical keyboard</li>
-                        <li>designed specifically for gaming</li>
-                        <li>features speed and responsiveness like never before</li>
-                        <li>for a more unfair advantage.</li>
+                        <h2>{mainProduct.name}</h2>
+                        <h4>{mainProduct.rating}</h4>
+                        <p>{mainProduct.description}</p>
                     </div>
                     <div className="mainPriceAndButton">
-                        <h6>999.99$</h6>
+                        <h6>${mainProduct.price}</h6>
                         <button className="mainBuyButton">Add To Cart</button>
                     </div>
                 </div>
             </div>
 
-
-            {displayOtherProducts()}
-
+            <div className="container-switch">
+                {displayOtherProducts()}
+            </div>
         </div>
     );
 }
