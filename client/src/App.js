@@ -50,7 +50,7 @@ function App() {
         <Route exact path="/chairs" component={Chairs} />
         <Route exact path="/computers" component={Computers} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/monitor" component={Monitor} />
+        <Route exact path="/monitors" component={Monitor} />
         <Route exact path="/peripherals" component={Peripherals} />
         <Route exact path="/bundles" component={Bundles} />
         {/* Erase and put navbar on every page */}
