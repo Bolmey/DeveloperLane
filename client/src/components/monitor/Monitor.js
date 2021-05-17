@@ -11,32 +11,32 @@ function Monitor(props) {
 
     useEffect(() => {
         actions.getMainMonitor()
-        .then(async (res) =>  await setMainProduct(res))
+            .then(async (res) => await setMainProduct(res))
         actions.getOtherMonitors()
-        .then(async(res) => await setOtherProducts(res))
+            .then(async (res) => await setOtherProducts(res))
 
     }, [])
 
-    
+
 
 
 
     function displayOtherProducts() {
         console.log(otherProducts)
         return (
-        otherProducts.map((product) => {
-            return (
+            otherProducts.map((product) => {
+                return (
                     <div className="mainContainer-monitor">
                         <div className="firstContainer">
                             <div className="heading"></div>
                             <div className="productImg">
-                                <img src={product.image}/>
+                                <img src={product.image} />
                             </div>
                             <div className="textContainer">
                                 <div className="leftText">
                                     <h1 className="productName">{product.name}</h1>
-                                    <p>Combining the latest optical technology and Razer’s analog mechanical key switches, the Razer Huntsman v2 Analog is good enough to get a five-star rating from us. That’s under-selling it.</p>
-            
+                                    <p>{product.description}</p>
+
                                 </div>
                                 <div className="buttonPriceContainer">
                                     <div className='raiting'>{product.rating}</div>
@@ -48,9 +48,10 @@ function Monitor(props) {
                             </div>
                         </div>
                     </div>
-            )
-        })
-        )}
+                )
+            })
+        )
+    }
 
 
 
@@ -61,32 +62,32 @@ function Monitor(props) {
     return (
         <div>
 
-        <div className="mainContainer-monitor">
-            <div className="firstContainer">
-                <div className="heading"></div>
-                <div className="productImg">
-                    <div className="img"></div>
-                </div>
-                <div className="textContainer">
-                    <div className="leftText">
-                        <h1 className="productName">{mainProduct.name}</h1>
-                        <p>Combining the latest optical technology and Razer’s analog mechanical key switches, the Razer Huntsman v2 Analog is good enough to get a five-star rating from us. That’s under-selling it.</p>
-
+            <div className="mainContainer-monitor">
+                <div className="firstContainer">
+                    <div className="heading"></div>
+                    <div className="productImg">
+                        <img src={mainProduct.image} />
                     </div>
-                    <div className="buttonPriceContainer">
-                        <div className='raiting'>{mainProduct.rating}</div>
-                        <div className='buttonPrice'>
-                            <h2>${mainProduct.price}</h2>
-                            <button className="button" type="button">Add to Cart</button>
+                    <div className="textContainer">
+                        <div className="leftText">
+                            <h1 className="productName">{mainProduct.name}</h1>
+                            <p>{mainProduct.description}</p>
+
+                        </div>
+                        <div className="buttonPriceContainer">
+                            <div className='raiting'>{mainProduct.rating}</div>
+                            <div className='buttonPrice'>
+                                <h2>${mainProduct.price}</h2>
+                                <button className="button" type="button">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div>
-            {displayOtherProducts()}
-        </div>
+            <div className="productContainer">
+                {displayOtherProducts()}
+            </div>
 
         </div>
     );
