@@ -50,60 +50,50 @@ router.get(`/`, (req, res) => {
 // PCs
 router.get('/get-main-PC', async (req, res) => {
     let PC = await PCs.find({ best: true });
-    console.log(PC)
     res.json(PC)
 })
 router.get('/get-other-PCs', async (req, res) => {
     let PCs = await PCs.find({ best: false });
-    console.log(PCs)
     res.json(PCs)
 })
 
 // Mouse
 router.get('/get-main-mouse', async (req, res) => {
     let mouse = await Mouse.find({ best: true });
-    console.log(mouse)
     res.json(mouse)
 })
 router.get('/get-other-mouse', async (req, res) => {
     let mouse = await Mouse.find({ best: false });
-    console.log(mouse)
     res.json(chamouseirs)
 })
 
 // Chairs
 router.get('/get-main-chair', async (req, res) => {
     let chair = await Chairs.find({ best: true });
-    console.log(chair)
     res.json(chair)
 })
 router.get('/get-other-chairs', async (req, res) => {
     let chairs = await Chairs.find({ best: false });
-    console.log(chairs)
     res.json(chairs)
 })
 
 // Monitors
 router.get('/get-main-monitor', async (req, res) => {
     let monitor = await Monitors.find({ best: true });
-    console.log(monitor)
     res.json(monitor)
 })
 router.get('/get-other-monitors', async (req, res) => {
     let monitors = await Monitors.find({ best: false });
-    console.log(monitors)
     res.json(monitors)
 })
 
 // Keyboards
 router.get('/get-main-keyboard', async (req, res) => {
     let keyboard = await Keyboards.find({ best: true });
-    console.log(keyboard)
     res.json(keyboard)
 })
 router.get('/get-other-keyboards', async (req, res) => {
     let keyboards = await Keyboards.find({ best: false });
-    console.log(keyboards)
     res.json(keyboards)
 })
 
@@ -115,7 +105,6 @@ router.post(`/logMeIn`, async (req, res) => {
     console.log(req.body)
     //Find user
     let user = await User.findOne({ email: req.body.email })
-    console.log(user)
     //If no user >> Create User
     if (!user) {
         user = await User.create(req.body)
@@ -141,7 +130,6 @@ function authorize(req, res, next) {
     console.log('monkey in the mittle', req.headers)
     if (req.headers.authorization) {
         let token = req.headers.authorization.split(' ')[1]
-        console.log(token)
         jwt.verify(token, 'secret key', async (err, data) => {
             if (!err) {
                 console.log(data)
