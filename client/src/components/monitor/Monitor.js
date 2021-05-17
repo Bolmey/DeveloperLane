@@ -11,10 +11,9 @@ function Monitor(props) {
 
     useEffect(() => {
         actions.getMainMonitor()
-            .then(async (res) => await setMainProduct(res))
+            .then(async (res) => await setMainProduct(res[0]))
         actions.getOtherMonitors()
             .then(async (res) => await setOtherProducts(res))
-
     }, [])
 
 
@@ -22,75 +21,65 @@ function Monitor(props) {
 
 
     function displayOtherProducts() {
-        console.log(otherProducts)
         return (
             otherProducts.map((product) => {
                 return (
-                    <div className="mainContainer-monitor">
-                        <div className="firstContainer">
-                            <div className="heading"></div>
-                            <div className="productImg">
-                                <img src={product.image} />
-                            </div>
-                            <div className="textContainer">
-                                <div className="leftText">
-                                    <h1 className="productName">{product.name}</h1>
-                                    <p>{product.description}</p>
+                    <div className="product-container">
+                        <div className="heading"></div>
+                        <div className="product-img">
+                            <img src={product.image} />
+                        </div>
+                        <div className="details-container">
+                            <div className="text-container">
+                                <h1 className="product-name">{product.name}</h1>
+                                <p>{product.description}</p>
 
-                                </div>
-                                <div className="buttonPriceContainer">
-                                    <div className='raiting'>{product.rating}</div>
-                                    <div className='buttonPrice'>
-                                        <h2>${product.price}</h2>
-                                        <button className="button" type="button">Add to Cart</button>
-                                    </div>
+                            </div>
+                            <div className="button-price-container">
+                                <div className='rating'>{product.rating}</div>
+                                <div className='button-price'>
+                                    <h2>${product.price}</h2>
+                                    <button className="button" type="button">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 )
-            })
-        )
+            }))
     }
 
 
 
-
-
-
-
     return (
-        <div>
+        <div className="body-container">
 
-            <div className="mainContainer-monitor">
-                <div className="firstContainer">
-                    <div className="heading"></div>
-                    <div className="productImg">
-                        <img src={mainProduct.image} />
+            <div className="main-product-container">
+                <div className="heading"></div>
+                <div className="main-product-img">
+                    <img src={mainProduct.image} />
+                </div>
+                <div className="main-details-container">
+                    <div className="main-text-container">
+                        <h1 className="main-product-name">{mainProduct.name}</h1>
+                        <p>{mainProduct.description}</p>
+
                     </div>
-                    <div className="textContainer">
-                        <div className="leftText">
-                            <h1 className="productName">{mainProduct.name}</h1>
-                            <p>{mainProduct.description}</p>
-
-                        </div>
-                        <div className="buttonPriceContainer">
-                            <div className='raiting'>{mainProduct.rating}</div>
-                            <div className='buttonPrice'>
-                                <h2>${mainProduct.price}</h2>
-                                <button className="button" type="button">Add to Cart</button>
-                            </div>
+                    <div className="main-button-price-container">
+                        <div className='main-rating'>{mainProduct.rating}</div>
+                        <div className='main-button-price'>
+                            <h2>${mainProduct.price}</h2>
+                            <button className="main-button" type="button">Add to Cart</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div className="productContainer">
-                {displayOtherProducts()}
+                {/* {displayOtherProducts()} */}
             </div>
 
         </div>
-    );
+    )
 }
 
 export default Monitor;
