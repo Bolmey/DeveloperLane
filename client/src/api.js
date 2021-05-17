@@ -74,6 +74,7 @@ const actions = {
     },
     getOtherMonitors: async () => {
         let monitors = await axios.get(`${serverUrl}/get-other-monitors`)
+        console.log(monitors)
         return monitors.data
     },
 
