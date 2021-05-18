@@ -1,11 +1,11 @@
 import React, { Fragment, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/layout/NavBar';
-import Home from './components/layout/Home';
+import NavBar from './components/NavBar/NavBar';
+import Home from './components/home/Home';
 import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
-import Alert from './components/layout/Alert';
+import Alert from './components/alert/Alert';
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
