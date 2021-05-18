@@ -1,11 +1,19 @@
 import React, { Fragment, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/navBar/Navbar';
+import NavBar from './components/NavBar/Navbar';
 import Home from './components/home/Home';
 import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
 import Alert from './components/Alert/Alert';
+
+import Computer from './components/computers/Computer';
+import Monitor from './components/monitor/Monitor';
+// import Computer from './components/computers/Computer';
+// import Computer from './components/computers/Computer';
+// import Computer from './components/computers/Computer';
+// import Computer from './components/computers/Computer';
+
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
@@ -31,6 +39,11 @@ const App = () => {
           <Switch>
             <Route exact path='/signup' component={SignUp} />
             <Route exact path='/login' component={Login} />
+            {/* <Route exact path='/peripherals' component={Peripherals} /> */}
+            <Route exact path='/monitors' component={Monitor} />
+            {/* <Route exact path='/chairs' component={Chair} />
+            <Route exact path='/bundles' component={Bundles} /> */}
+            <Route exact path='/computers' component={Computer} />
           </Switch>
         </section>
       </Fragment>
