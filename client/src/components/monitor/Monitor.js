@@ -32,7 +32,7 @@ function Monitor(props) {
                 "ViewSonic Elite XG270QG",
             image
                 :
-                "https://www.techtoyreviews.com/wp-content/uploads/2020/06/ViewSonic-mo...",
+                "https://robbreport.com/wp-content/uploads/2020/01/g901.jpg?w=1000",
             description
                 :
                 "The ViewSonic Elite XG270QG is a good monitor for most uses. It perfor...",
@@ -83,7 +83,7 @@ function Monitor(props) {
                                     <h2>${product.price}</h2>
                                     <button className="button" type="button">Add to Cart</button>
                                 </div>
-                            </div>ç
+                            </div>
                         </div>
                     </div>
                 )
