@@ -1,46 +1,58 @@
 import React, { useState, useEffect } from 'react';
-import actions from '../../api';
-import './monitor.css';
+import actions from '../api.js';
 
-function Monitor(props) {
-  const [mainProduct, setMainProduct] = useState([]);
+const Product = ({ match }) => {
+  const [mainProduct, setMainProduct] = useState({});
   const [otherProducts, setOtherProducts] = useState([]);
 
-  let other = [
-    {
-      name: 'Samsung LC49G95TSSNXZA',
-      image:
-        'https://robbreport.com/wp-content/uploads/2020/01/g901.jpg?w=1000',
-      description:
-        'Get your head in the game with the 49 inch Odyssey G9, which matches t...',
-      price: 1399.99,
-      rating: '4.7',
-      best: false
-    },
-    {
-      name: 'ViewSonic Elite XG270QG',
-      image:
-        'https://robbreport.com/wp-content/uploads/2020/01/g901.jpg?w=1000',
-      description:
-        'The ViewSonic Elite XG270QG is a good monitor for most uses. It perfor...',
-      price: 559.99,
-      rating: '4.5',
-      best: false
+  console.log(match.path);
+
+  async function getProducts() {
+    let path = match.path;
+    let responseMain;
+    let responseOther;
+    switch (path) {
+      case '/computers':
+        responseMain = await actions.getMainPC();
+        responseOther = await actions.getOtherPCs();
+        setMainProduct(responseMain[0]);
+        setOtherProducts(responseOther);
+        break;
+      case '/mouse':
+        responseMain = await actions.getMainMouse();
+        responseOther = await actions.getOtherMouse();
+        setMainProduct(responseMain[0]);
+        setOtherProducts(responseOther);
+        break;
+      case '/keyboards':
+        responseMain = await actions.getMainKeyboard();
+        responseOther = await actions.getOtherKeyboards();
+        setMainProduct(responseMain[0]);
+        setOtherProducts(responseOther);
+        break;
+      case '/chairs':
+        responseMain = await actions.getMainChair();
+        responseOther = await actions.getOtherChairs();
+        setMainProduct(responseMain[0]);
+        setOtherProducts(responseOther);
+        break;
+      case '/monitors':
+        responseMain = await actions.getMainMonitor();
+        responseOther = await actions.getOtherMonitors();
+        setMainProduct(responseMain[0]);
+        setOtherProducts(responseOther);
+        break;
     }
-  ];
+  }
 
   useEffect(() => {
-    actions.getMainMonitor().then(async (res) => await setMainProduct(res[0]));
-    actions.getOtherMonitors().then(async (res) => {
-      await setOtherProducts(res);
-      setOtherProducts(other);
-    });
+    getProducts();
   }, []);
 
   function displayOtherProducts() {
     return otherProducts.map((product) => {
       return (
-        <div className='product-container'>
+        <div className='product-container' key={product._id}>
           <div className='heading'></div>
           <div className='product-img'>
             <img src={product.image} />
@@ -99,6 +111,6 @@ function Monitor(props) {
       <div className='productContainer'>{displayOtherProducts()}</div>
     </div>
   );
-}
+};
 
-export default Monitor;
+export default Product;

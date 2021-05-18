@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import './navbar.css';
+import './NavBar.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
@@ -42,7 +42,8 @@ function NavBar({ auth: { isAuthenticated, loading }, logout }) {
           <Nav.Link href='/bundles'>Bundles</Nav.Link>
           <Nav.Link href='/computers'>Computers</Nav.Link>
           <Nav.Link href='/monitors'>Monitors</Nav.Link>
-          <Nav.Link href='/peripherals'>Peripherals</Nav.Link>
+          <Nav.Link href='/keyboards'>Keyboards</Nav.Link>
+          <Nav.Link href='/mouse'>Mouse</Nav.Link>
           <Nav.Link href='/chairs'>Chairs</Nav.Link>
           {!loading && (
             <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
