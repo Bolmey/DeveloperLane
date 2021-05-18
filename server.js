@@ -20,6 +20,7 @@ app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/profile', require('./routes/api/profile'));
 app.use('/api/posts', require('./routes/api/posts'));
 
+app.use('/', require('./routes/routes.js'));
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
@@ -28,8 +29,6 @@ app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 //     .connect(process.env.MONGODB_URI || 'mongodb+srv://admin123:admin123@cluster0.hhdrc.mongodb.net/Devlane?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
 //     .then(x => console.log(`Connected to ${x.connections[0].name}`))
 //     .catch(() => console.error("Error connecting to Mongo"))
-
-// app.use('/', require('./routes/routes.js'));
 
 // const PORT = process.env.PORT || 5000;
 // app.listen(PORT, () => console.log(`Listening to port ${PORT}`));
