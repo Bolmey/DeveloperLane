@@ -5,7 +5,7 @@ import NavBar from './components/NavBar/NavBar';
 import Home from './components/home/Home';
 import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
-import Alert from './components/alert/Alert';
+import Alert from './components/Alert/Alert';
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
