@@ -7,8 +7,8 @@ import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
 import Alert from './components/Alert/Alert';
 
-import Computer from './components/computers/Computer';
-import Monitor from './components/monitor/Monitor';
+// import Computer from './components/computers/Computer';
+// import Monitor from './components/monitor/Monitor';
 import Product from './components/Product';
 // import Computer from './components/computers/Computer';
 // import Computer from './components/computers/Computer';

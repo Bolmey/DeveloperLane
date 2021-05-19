@@ -55,8 +55,8 @@ router.get('/get-main-mouse', async (req, res) => {
   res.json(mouse);
 });
 router.get('/get-other-mouse', async (req, res) => {
-  let mouse = await Mouse.find({ best: false });
-  res.json(chamouseirs);
+  let mouses = await Mouse.find({ best: false });
+  res.json(mouses);
 });
 
 // Chairs

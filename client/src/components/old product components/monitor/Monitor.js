@@ -30,8 +30,8 @@ function Monitor(props) {
   ];
 
   useEffect(() => {
-    actions.getMainMonitor().then(async (res) => await setMainProduct(res[0]));
-    actions.getOtherMonitors().then(async (res) => {
+    actions.getMainMonitor().then((res) => setMainProduct(res[0]));
+    actions.getOtherMonitors().then((res) => {
       await setOtherProducts(res);
       setOtherProducts(other);
     });
