@@ -85,11 +85,12 @@ function Monitor(props) {
             <p>{mainProduct.description}</p>
           </div>
           <div className='main-button-price-container'>
+            {/* <i class='fas fa-star'></i> */}
             <div className='main-rating'>{mainProduct.rating}</div>
             <div className='main-button-price'>
               <h2>${mainProduct.price}</h2>
-              <button className='main-button' type='button'>
-                Add to Cart
+              <button className='save-main-button' type='button'>
+                Save
               </button>
             </div>
           </div>

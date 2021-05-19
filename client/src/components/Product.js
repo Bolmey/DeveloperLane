@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import actions from '../api.js';
+// import './Product.css';
 
 const Product = ({ match }) => {
   const [mainProduct, setMainProduct] = useState({});
   const [otherProducts, setOtherProducts] = useState([]);
+  let temp = match.path.slice(1, match.path.length);
+  let pageHeader = temp.charAt(0).toUpperCase() + temp.slice(1);
 
   console.log(match.path);
 
@@ -52,17 +55,17 @@ const Product = ({ match }) => {
   function displayOtherProducts() {
     return otherProducts.map((product) => {
       return (
-        <div className='product-container' key={product._id}>
+        <div className='other-product-container' key={product._id}>
           <div className='heading'></div>
-          <div className='product-img'>
+          <div className='other-product-img'>
             <img src={product.image} />
           </div>
-          <div className='details-container'>
+          <div className='other-details-container'>
             <div className='text-container'>
               <h1 className='product-name'>{product.name}</h1>
               <p>{product.description}</p>
             </div>
-            <div className='button-price-container'>
+            <div className='other-button-price-container'>
               <div className='rating'>{product.rating}</div>
               <div className='button-price'>
                 <h2>${product.price}</h2>
@@ -78,18 +81,19 @@ const Product = ({ match }) => {
   }
 
   return (
-    <div className='body-container'>
+    <div className='product-page-body'>
+      <div className='header-container'>
+        <h1>{pageHeader}</h1>
+      </div>
       <div className='main-product-container'>
-        <div className='heading'></div>
-        <div className='main-product-img'>
-          <div
-            className='main-picture'
-            style={{
-              backgroundImage: `url(${mainProduct.image})`,
-              backgroundPosition: `center`,
-              backgroundSize: '100%'
-            }}></div>
-          {/* <img src={mainProduct.image} /> */}
+        <div
+          className='main-picture'
+          style={{
+            backgroundImage: `url(${mainProduct.image})`,
+            backgroundPosition: `center`,
+            backgroundSize: '100%'
+          }}>
+          <div className='best-tag'>Best All-Around</div>
         </div>
         <div className='main-details-container'>
           <div className='main-text-container'>
@@ -108,7 +112,7 @@ const Product = ({ match }) => {
         </div>
       </div>
 
-      <div className='productContainer'>{displayOtherProducts()}</div>
+      {/* <div className='productContainer'>{displayOtherProducts()}</div> */}
     </div>
   );
 };

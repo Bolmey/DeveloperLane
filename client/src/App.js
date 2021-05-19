@@ -35,19 +35,17 @@ const App = () => {
       <Fragment className='App'>
         <NavBar />
         <Route exact path='/' component={Home} />
-        <section className='container'>
-          <Alert />
-          <Switch>
-            <Route exact path='/signup' component={SignUp} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/keyboards' component={Product} />
-            <Route exact path='/mouse' component={Product} />
-            <Route exact path='/monitors' component={Product} />
-            <Route exact path='/chairs' component={Product} />
-            <Route exact path='/bundles' component={Product} />
-            <Route exact path='/computers' component={Product} />
-          </Switch>
-        </section>
+        <Alert />
+        <Switch>
+          <Route exact path='/signup' component={SignUp} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/keyboards' component={Product} />
+          <Route exact path='/mouse' component={Product} />
+          <Route exact path='/monitors' component={Product} />
+          <Route exact path='/chairs' component={Product} />
+          <Route exact path='/bundles' component={Product} />
+          <Route exact path='/computers' component={Product} />
+        </Switch>
       </Fragment>
     </Provider>
   );
