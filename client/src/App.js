@@ -7,9 +7,10 @@ import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
 import Alert from './components/Alert/Alert';
 
-import Computer from './components/computers/Computer';
-import Monitor from './components/monitor/Monitor';
-import Peripherals from './components/peripherals/Peripherals';
+// import Computer from './components/computers/Computer';
+// import Monitor from './components/monitor/Monitor';
+import Product from './components/Product';
+// import Computer from './components/computers/Computer';
 // import Computer from './components/computers/Computer';
 // import Computer from './components/computers/Computer';
 // import Computer from './components/computers/Computer';
@@ -34,16 +35,17 @@ const App = () => {
       <Fragment className='App'>
         <NavBar />
         <Route exact path='/' component={Home} />
-        <section className='ccontainer'>
+        <section className='container'>
           <Alert />
           <Switch>
             <Route exact path='/signup' component={SignUp} />
             <Route exact path='/login' component={Login} />
-            <Route exact path='/peripherals' component={Peripherals} />
-            <Route exact path='/monitors' component={Monitor} />
-            {/* <Route exact path='/chairs' component={Chair} />
-            <Route exact path='/bundles' component={Bundles} /> */}
-            <Route exact path='/computers' component={Computer} />
+            <Route exact path='/keyboards' component={Product} />
+            <Route exact path='/mouse' component={Product} />
+            <Route exact path='/monitors' component={Product} />
+            <Route exact path='/chairs' component={Product} />
+            <Route exact path='/bundles' component={Product} />
+            <Route exact path='/computers' component={Product} />
           </Switch>
         </section>
       </Fragment>

@@ -37,6 +37,17 @@ const Chairs = require('../models/Chairs');
 //     res.json({ serverWorks: true })
 // })
 
+
+
+//post product to user
+router.post(`/post-to-user`, authorize, (req, res) => {
+  console.log(req)
+  console.log(req.body)
+  let msg = req.body
+  msg.ownerId = res.locals.user._id
+  //User.findOneAndUpdate(msg).then(message => res.json(message))
+})
+
 // ---- Products ---- //
 
 // PCs
@@ -55,8 +66,8 @@ router.get('/get-main-mouse', async (req, res) => {
   res.json(mouse);
 });
 router.get('/get-other-mouse', async (req, res) => {
-  let mouse = await Mouse.find({ best: false });
-  res.json(chamouseirs);
+  let mouses = await Mouse.find({ best: false });
+  res.json(mouses);
 });
 
 // Chairs
@@ -111,23 +122,24 @@ router.get('/get-other-keyboards', async (req, res) => {
 
 // })
 
-// function authorize(req, res, next) {
-//     console.log('monkey in the mittle', req.headers)
-//     if (req.headers.authorization) {
-//         let token = req.headers.authorization.split(' ')[1]
-//         jwt.verify(token, 'secret key', async (err, data) => {
-//             if (!err) {
-//                 console.log(data)
-//                 res.locals.user = data.user
-//                 next()
-//             } else {
-//                 console.error(err)
-//                 res.json({ err })
-//             }
-//         })
-//     } else {
-//         res.status(403).json({ message: 'You dont have no token' })
-//     }
+function authorize(req, res, next) {
+  console.log('monkey in the mittle', req.headers)
+  if (req.headers.authorization) {
+    let token = req.headers.authorization.split(' ')[1]
+    console.log(token)
+    jwt.verify(token, 'secret', async (err, data) => {
+      if (!err) {
+        console.log(data)
+        res.locals.user = data.user
+        next()
+      } else {
+        console.error(err)
+        res.json({ err })
+      }
+    })
+  } else {
+    res.status(403).json({ message: 'You dont have no token' })
+  }
 
-// }
+}
 module.exports = router;
