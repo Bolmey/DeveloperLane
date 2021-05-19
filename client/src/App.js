@@ -9,7 +9,7 @@ import Alert from './components/Alert/Alert';
 
 import Computer from './components/computers/Computer';
 import Monitor from './components/monitor/Monitor';
-// import Computer from './components/computers/Computer';
+import Peripherals from './components/peripherals/Peripherals';
 // import Computer from './components/computers/Computer';
 // import Computer from './components/computers/Computer';
 // import Computer from './components/computers/Computer';
@@ -39,7 +39,7 @@ const App = () => {
           <Switch>
             <Route exact path='/signup' component={SignUp} />
             <Route exact path='/login' component={Login} />
-            {/* <Route exact path='/peripherals' component={Peripherals} /> */}
+            <Route exact path='/peripherals' component={Peripherals} />
             <Route exact path='/monitors' component={Monitor} />
             {/* <Route exact path='/chairs' component={Chair} />
             <Route exact path='/bundles' component={Bundles} /> */}

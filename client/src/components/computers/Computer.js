@@ -54,7 +54,7 @@ function Computer(props) {
         actions.getOtherMonitors()
             .then(async (res) => {
                 await setOtherProducts(res)
-                setOtherProducts(other)
+                //setOtherProducts(other)
             })
     }, [])
 

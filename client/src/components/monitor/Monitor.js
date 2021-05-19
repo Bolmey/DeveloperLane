@@ -54,7 +54,7 @@ function Monitor(props) {
         actions.getOtherMonitors()
             .then(async (res) => {
                 await setOtherProducts(res)
-                setOtherProducts(other)
+                //setOtherProducts(other)   wtf was this?
             })
     }, [])
 
@@ -63,6 +63,7 @@ function Monitor(props) {
 
 
     function displayOtherProducts() {
+        console.log(otherProducts)
         return (
             otherProducts.map((product) => {
                 return (
