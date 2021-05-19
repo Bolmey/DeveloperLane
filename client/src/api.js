@@ -20,6 +20,13 @@ const actions = {
   getUser: async () => {
     return await axios.get(`${serverUrl}/get-user`, createHeaders());
   },
+
+  //post product to user
+  userPost: async (product) => {
+    let user = await axios.post(`${serverUrl}/post-to-user`, { product }, createHeaders())
+    return user
+  },
+
   getMessages: async () => {
     let messages = await axios.get(`${serverUrl}/get-messages`);
     return messages.data;
@@ -79,7 +86,6 @@ const actions = {
   },
   getOtherMonitors: async () => {
     let monitors = await axios.get(`${serverUrl}/get-other-monitors`);
-    console.log(monitors);
     return monitors.data;
   },
 

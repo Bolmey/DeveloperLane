@@ -10,9 +10,11 @@ function Peripherals(props) {
   //.then(() => console.log(products))
 
   useEffect(() => {
-    actions.getMainKeyboard().then((res) => setMainProduct(res[0]));
+    actions.getMainKeyboard()
+      .then((res) => setMainProduct(res[0]));
 
-    actions.getOtherKeyboards().then((res) => setOtherProducts(res));
+    actions.getOtherKeyboards()
+      .then((res) => setOtherProducts(res));
   }, []);
 
   //console.log(otherProducts[0].name);

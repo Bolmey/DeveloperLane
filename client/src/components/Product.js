@@ -52,6 +52,18 @@ const Product = ({ match }) => {
     getProducts();
   }, []);
 
+  //get list of products from user
+  // useEffect(() => {
+  //   actions.getUser().then(res => console.log(res))
+  //    .then(console.log(userProducts))
+
+  // }, [])
+
+  function handleAddToCart(product) {
+    actions.userPost(product).then((res) => console.log(res));
+    //.then((res) => setUserProducts([...userProducts, res.data]))
+  }
+
   function displayOtherProducts() {
     return otherProducts.map((product) => {
       return (
@@ -69,7 +81,10 @@ const Product = ({ match }) => {
               <div className='rating'>{product.rating}</div>
               <div className='button-price'>
                 <h2>${product.price}</h2>
-                <button className='button' type='button'>
+                <button
+                  onSubmit={handleAddToCart(product)}
+                  className='button'
+                  type='button'>
                   Add to Cart
                 </button>
               </div>
@@ -104,7 +119,10 @@ const Product = ({ match }) => {
             <div className='main-rating'>{mainProduct.rating}</div>
             <div className='main-button-price'>
               <h2>${mainProduct.price}</h2>
-              <button className='main-button' type='button'>
+              <button
+                onSubmit={handleAddToCart(mainProduct)}
+                className='main-button'
+                type='button'>
                 Add to Cart
               </button>
             </div>
