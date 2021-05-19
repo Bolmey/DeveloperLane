@@ -66,18 +66,17 @@ function Monitor(props) {
         return (
             otherProducts.map((product) => {
                 return (
-                    <div className="product-container">
+                    <div className="other-product-container">
                         <div className="heading"></div>
-                        <div className="product-img">
-                            <img src={product.image} />
-                        </div>
-                        <div className="details-container">
-                            <div className="text-container">
+                        <div className="other-product-img">
+                            <div className="other-picture" style={{ backgroundImage: `url(${product.image})`, backgroundPosition: `center`, backgroundSize: '100%' }}></div>                        </div>
+                        <div className="other-details-container">
+                            <div className="other-text-container">
                                 <h1 className="product-name">{product.name}</h1>
                                 <p>{product.description}</p>
 
                             </div>
-                            <div className="button-price-container">
+                            <div className="other-button-price-container">
                                 <div className='rating'>{product.rating}</div>
                                 <div className='button-price'>
                                     <h2>${product.price}</h2>
@@ -85,7 +84,7 @@ function Monitor(props) {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div >
                 )
             }))
     }
@@ -96,7 +95,7 @@ function Monitor(props) {
         <div className="body-container">
 
             <div className="main-product-container">
-                <div className="heading"></div>
+                <div className="main-heading"></div>
                 <div className="main-product-img">
                     <div className="main-picture" style={{ backgroundImage: `url(${mainProduct.image})`, backgroundPosition: `center`, backgroundSize: '100%' }}>
 
