@@ -23,8 +23,12 @@ const actions = {
 
   //post product to user
   userPost: async (product) => {
-    let user = await axios.post(`${serverUrl}/post-to-user`, { product }, createHeaders())
-    return user
+    let user = await axios.post(
+      `${serverUrl}/post-to-user`,
+      { product },
+      createHeaders()
+    );
+    return user;
   },
 
   getMessages: async () => {
@@ -62,6 +66,7 @@ const actions = {
   // Mouse
   getMainMouse: async () => {
     let mouse = await axios.get(`${serverUrl}/get-main-mouse`);
+    console.log('mouses or mice', mouse);
     return mouse.data;
   },
   getOtherMouse: async () => {
