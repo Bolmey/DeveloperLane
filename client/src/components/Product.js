@@ -90,7 +90,7 @@ const Product = ({ match }) => {
           </div>
           <div className='main-button-price-container'>
             {/* <i class='fas fa-star'></i> */}
-            <div className='main-rating'>{mainProduct?.rating}</div>
+            <div className='main-rating'>Rating: {mainProduct?.rating}</div>
             <div className='main-button-price'>
               <h2>${mainProduct.price}</h2>
               <button onClick={() => handleAddToCart(mainProduct)} className='main-button' type='button'>
@@ -124,7 +124,7 @@ const Product = ({ match }) => {
               <p>{product.description}</p>
             </div>
             <div className='other-button-price-container'>
-              <div className='rating'>{product.rating}</div>
+              <div className='rating'>Rating: {product.rating}</div>
               <div className='button-price'>
                 <h2>${product.price}</h2>
                 {match.path !== '/cart' && <button onClick={() => handleAddToCart(product)} className='button' type='button'>
