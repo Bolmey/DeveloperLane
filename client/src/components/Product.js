@@ -57,7 +57,6 @@ const Product = ({ match }) => {
 
   useEffect(() => {
     getProducts();
-    console.log('useEffect test');
   }, [match]);
 
 

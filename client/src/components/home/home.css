@@ -3,8 +3,10 @@ width: 100%;
     
 }
 
-.container1Text{
+.container1Text, .container2Text, .container3Text, .container4Text, .container5Text{
     margin-bottom: -15px;
+    display: flex;
+    justify-content:center;
 }
 
 .container1Button, .container2Button, .container3Button, .container4Button, .container5Button{
@@ -13,6 +15,19 @@ width: 100%;
     color: white;
     border-radius: 5px;
     margin-bottom: 10px;
+    border: none;
+  background: #1619ef;
+  background: -moz-linear-gradient(left, #1619ef 0%, #9b39cb 56%, #8b0b9b 100%);
+  background: -webkit-linear-gradient(
+    left,
+    #1619ef 0%,
+    #9b39cb 56%,
+    #8b0b9b 100%
+  );
+  background: linear-gradient(to right, #1619ef 0%, #9b39cb 56%, #8b0b9b 100%);
+  color: white;
+  width: 150px;
+  height: 30px;
 }
 
 .buttonContainer1, .buttonContainer2, .buttonContainer3, .buttonContainer4, .buttonContainer5{
@@ -24,6 +39,8 @@ width: 100%;
 }
 
 .container1{
+    display: flex;
+    justify-content: center;
     height: 278px;
     background-image: url('../../imgs/firstcontainer.png');
     background-position: center;
@@ -32,6 +49,8 @@ width: 100%;
     box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, inset 0px -50px 39px 1px rgba(0,0,0,0.65);
 }
 .container2{
+    display: flex;
+    justify-content: center;
     height: 278px;
     background-color: red;
     background-image: url('../../imgs/Container2.jpeg');
@@ -41,6 +60,8 @@ width: 100%;
     box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, inset 0px -50px 39px 1px rgba(0,0,0,0.65);
 }
 .container3{
+    display: flex;
+    justify-content: center;
     height: 278px;
     background-color: blue;
     background-image: url('../../imgs/monito.jpeg');
@@ -50,6 +71,8 @@ width: 100%;
     box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, inset 0px -50px 39px 1px rgba(0,0,0,0.65);
 }
 .container4{
+    display: flex;
+    justify-content: center;
     height: 278px;
     background-color: orange;
     background-image: url('../../imgs/periphials.jpeg');
@@ -59,6 +82,8 @@ width: 100%;
     box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, inset 0px -50px 39px 1px rgba(0,0,0,0.65);
 }
 .container5{
+    display: flex;
+    justify-content: center;
     height: 278px;
     background-color: green;
     background-image: url('../../imgs/chair.jpeg');
@@ -69,6 +94,10 @@ width: 100%;
 
 }
 
+.chairImg{
+    width:100%;
+}
+
 p{
     font-size: 1.50em;
     margin-top: 0;
@@ -76,8 +105,10 @@ p{
 
 }
 
+
 .textButtonContainer{
-    padding-top: 160px;
+    align-self: flex-end;
+    position: absolute;
 }
 
 @media only screen and (min-width: 768px) {
@@ -91,7 +122,7 @@ p{
     }
 
     .container1{
-        max-width: 1540px;
+        max-width: 1140px;
         min-width: 950px;
         width: 80%;
         height:550px;
@@ -102,7 +133,7 @@ p{
     }
 
     .container2{
-        max-width: 1540px;
+        max-width: 1140px;
         min-width: 950px;
         width: 80%;
         height:550px;
@@ -113,7 +144,7 @@ p{
     }
 
     .container3{
-        max-width: 1540px;
+        max-width: 1140px;
         min-width: 950px;
         width: 80%;
         height:550px;
@@ -124,7 +155,7 @@ p{
     }
 
     .container4{
-        max-width: 1540px;
+        max-width: 1140px;
         min-width: 950px;
         width: 80%;
         height:550px;
@@ -135,7 +166,7 @@ p{
     }
 
     .container5{
-        max-width: 1540px;
+        max-width: 1140px;
         min-width: 950px;
         width: 80%;
         height:550px;

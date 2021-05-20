@@ -2,6 +2,7 @@ import React from 'react';
 import './home.css'
 import actions from '../../api'
 
+
 function Home(props) {
 
 
@@ -24,8 +25,7 @@ function Home(props) {
                         <p>Computers</p>
                     </div>
                     <div className="buttonContainer2">
-                        <button className="container2Button">See PC</button>
-                        <button className="container2Button">See Mac</button>
+                        <button className="container2Button">See Computers</button>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,6 @@ function Home(props) {
                     </div>
                     <div className="buttonContainer3">
                         <button className="container3Button">See Monitors</button>
-                        <button className="container3Button">See Something</button>
                     </div>
                 </div>
             </div>
@@ -58,7 +57,6 @@ function Home(props) {
                     </div>
                     <div className="buttonContainer5">
                         <button className="container5Button">See Chairs</button>
-                        <button className="container5Button">See Something</button>
                     </div>
                 </div>
             </div>
