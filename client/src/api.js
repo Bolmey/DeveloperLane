@@ -63,6 +63,7 @@ const actions = {
   // Mouse
   getMainMouse: async () => {
     let mouse = await axios.get(`${serverUrl}/get-main-mouse`);
+    console.log('mouses or mice', mouse);
     return mouse.data;
   },
   getOtherMouse: async () => {

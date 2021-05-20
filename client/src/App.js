@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/navBar/Navbar';
+import TheNavBar from './components/TheNavBar/TheNavBar';
 import Home from './components/home/Home';
 import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
@@ -33,21 +33,20 @@ const App = () => {
   return (
     <Provider store={store}>
       <Fragment className='App'>
-        <NavBar />
+        <TheNavBar />
         <Route exact path='/' component={Home} />
-        <section className='container'>
-          <Alert />
-          <Switch>
-            <Route exact path='/signup' component={SignUp} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/keyboards' component={Product} />
-            <Route exact path='/mouse' component={Product} />
-            <Route exact path='/monitors' component={Product} />
-            <Route exact path='/chairs' component={Product} />
-            <Route exact path='/bundles' component={Product} />
-            <Route exact path='/computers' component={Product} />
-          </Switch>
-        </section>
+        <Alert />
+        <Switch>
+          <Route exact path='/signup' component={SignUp} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/keyboards' component={Product} />
+          <Route exact path='/mouse' component={Product} />
+          <Route exact path='/monitors' component={Product} />
+          <Route exact path='/chairs' component={Product} />
+          <Route exact path='/bundles' component={Product} />
+          <Route exact path='/computers' component={Product} />
+          <Route exact path='/cart' component={Product} />
+        </Switch>
       </Fragment>
     </Provider>
   );

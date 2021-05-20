@@ -15,11 +15,7 @@ const Chairs = require('../models/Chairs');
 //     Message.create(msg).then(message => res.json(message))
 // })
 
-// router.get(`/get-user`, authorize, async (req, res) => {
-//     //console.log("in get user after next", res.locals.user._id)
-//     let user = await User.findById(res.locals.user._id)
-//     res.json(user)
-// })
+
 
 // router.post('/signUp', (req, res) => {
 //     console.log(req.body)
@@ -38,37 +34,45 @@ const Chairs = require('../models/Chairs');
 // })
 
 
+// Fetch user data
+router.get(`/get-user`, authorize, async (req, res) => {
+  //console.log("in get user after next", res.locals.user._id)
+  let userid = res.locals.user.id
+  let user = await User.find({ _id: userid })
+  res.json(user)
+})
 
 //  ADD PRODUCT TO CART
 router.post(`/post-to-user`, authorize, (req, res) => {
-  let product = req.body
+  let product = req.body.product
+  let productName = product.name
   let userid = res.locals.user.id
-  console.log(userid)
-  console.log('testsetset', res.locals.user)
-  console.log('res correct? ', res.locals.user.id)
-  User.findOneAndUpdate({ _id: userid }, { name: 'testtestnamenew' }).then(resp => res.json(resp))
+  User.findOneAndUpdate({ _id: userid }, { $push: { products: product } }).then(resp => res.json(resp))
 })
 
 // ---- Products ---- //
 
 // PCs
 router.get('/get-main-PC', async (req, res) => {
+  console.log('get main pc');
   let PC = await PCs.find({ best: true });
+  // console.log(PC, '???');
   res.json(PC);
 });
 router.get('/get-other-PCs', async (req, res) => {
-  let PCs = await PCs.find({ best: false });
-  res.json(PCs);
+  let PC = await PCs.find({ best: false });
+  res.json(PC);
 });
 
 // Mouse
 router.get('/get-main-mouse', async (req, res) => {
-  let mouse = await Mouse.find({ best: true });
-  res.json(mouse);
+  let mice = await Mouse.find();
+  console.log('something', mice);
+  res.json(mice);
 });
 router.get('/get-other-mouse', async (req, res) => {
-  let mouses = await Mouse.find({ best: false });
-  res.json(mouses);
+  let mice = await Mouse.find({ best: false });
+  res.json(mice);
 });
 
 // Chairs
@@ -124,7 +128,7 @@ router.get('/get-other-keyboards', async (req, res) => {
 // })
 
 function authorize(req, res, next) {
-  console.log('monkey in the mittle', req.headers)
+  // console.log('monkey in the mittle', req.headers);
   if (req.headers.authorization) {
     let token = req.headers.authorization.split(' ')[1]
     console.log('token ', token)
@@ -136,10 +140,9 @@ function authorize(req, res, next) {
         console.error('err ', err)
         res.json({ err })
       }
-    })
+    });
   } else {
-    res.status(403).json({ message: 'You dont have no token' })
+    res.status(403).json({ message: 'You dont have no token' });
   }
-
 }
 module.exports = router;
