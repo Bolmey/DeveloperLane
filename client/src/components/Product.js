@@ -140,6 +140,13 @@ const Product = ({ match }) => {
                 type='button'>
                 Add to Cart
               </button>
+              <a
+                href='https://www.amazon.com/HP-M27ha-FHD-Monitor-Built/dp/B08DJB7VVY/ref=sxin_5_ac_d_mf_rf?ac_md=1-0-MjYgdG8gMjkuOSBJbmNoZXM%3D-ac_d_rf&amp;cv_ct_cx=computer+monitor&amp;dchild=1&amp;keywords=computer+monitor&amp;pd_rd_i=B08DJB7VVY&amp;pd_rd_r=c63134db-e168-4b2c-8cfc-18d88729f249&amp;pd_rd_w=5y7xH&amp;pd_rd_wg=O4Oyb&amp;pf_rd_p=89fa575a-c44e-401e-be03-82c92ec5e029&amp;pf_rd_r=P124AS5QBSTZRWZHQ6RE&amp;psc=1&amp;qid=1621545600&amp;sr=1-1-89f8c401-73d8-4caf-b340-e9b34f2a8bae?_encoding=UTF8&amp;camp=1789&amp;creative=9325&amp;linkCode=ur2&amp;tag=storypodca-20&amp;linkId=2P4S6EY6B462X4AR'
+                target='_blank'
+                rel='noopener noreferrer'
+                style={{ border: 'none', textDecoration: 'none' }}>
+                <img src='https://www.niftybuttons.com/amazon/amazon-button2.png' />
+              </a>
             </div>
           </div>
         </div>
