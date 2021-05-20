@@ -54,7 +54,10 @@ function Monitor(props) {
               <div className='rating'>{product.rating}</div>
               <div className='button-price'>
                 <h2>${product.price}</h2>
-                <button className='button' type='button'>
+                <button
+                  onSubmit={handleAddToCart(product)}
+                  className='button'
+                  type='button'>
                   Add to Cart
                 </button>
               </div>
@@ -68,7 +71,9 @@ function Monitor(props) {
   return (
     <div className='body-container'>
       <div className='main-product-container'>
-        <div className='heading'></div>
+        <div className='heading'>
+          <h1>{pageHeader}</h1>
+        </div>
         <div className='main-product-img'>
           <div
             className='main-picture'
@@ -89,7 +94,10 @@ function Monitor(props) {
             <div className='main-rating'>{mainProduct.rating}</div>
             <div className='main-button-price'>
               <h2>${mainProduct.price}</h2>
-              <button className='save-main-button' type='button'>
+              <button
+                onSubmit={handleAddToCart(mainProduct)}
+                className='save-main-button'
+                type='button'>
                 Save
               </button>
             </div>

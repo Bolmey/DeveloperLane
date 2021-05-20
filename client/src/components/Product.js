@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import actions from '../api.js';
-// import './Product.css';
+import './Product.css';
 
 const Product = ({ match }) => {
   const [mainProduct, setMainProduct] = useState({});
@@ -67,13 +67,19 @@ const Product = ({ match }) => {
   function displayOtherProducts() {
     return otherProducts.map((product) => {
       return (
-        <div className='other-product-container' key={product._id}>
+        <div className='other-product-container'>
           <div className='heading'></div>
           <div className='other-product-img'>
-            <img src={product.image} />
+            <div
+              className='other-picture'
+              style={{
+                backgroundImage: `url(${product.image})`,
+                backgroundPosition: `center`,
+                backgroundSize: '100%'
+              }}></div>{' '}
           </div>
           <div className='other-details-container'>
-            <div className='text-container'>
+            <div className='other-text-container'>
               <h1 className='product-name'>{product.name}</h1>
               <p>{product.description}</p>
             </div>
@@ -96,19 +102,20 @@ const Product = ({ match }) => {
   }
 
   return (
-    <div className='product-page-body'>
-      <div className='header-container'>
-        <h1>{pageHeader}</h1>
-      </div>
+    <div className='body-container'>
       <div className='main-product-container'>
-        <div
-          className='main-picture'
-          style={{
-            backgroundImage: `url(${mainProduct.image})`,
-            backgroundPosition: `center`,
-            backgroundSize: '100%'
-          }}>
-          <div className='best-tag'>Best All-Around</div>
+        <div className='main-heading'>
+          <h1>{pageHeader}</h1>
+        </div>
+        <div className='main-product-img'>
+          <div
+            className='main-picture'
+            style={{
+              backgroundImage: `url(${mainProduct.image})`,
+              backgroundPosition: `center`,
+              backgroundSize: '100%'
+            }}></div>
+          {/* <img src={mainProduct.image} /> */}
         </div>
         <div className='main-details-container'>
           <div className='main-text-container'>
@@ -116,12 +123,13 @@ const Product = ({ match }) => {
             <p>{mainProduct.description}</p>
           </div>
           <div className='main-button-price-container'>
+            {/* <i class='fas fa-star'></i> */}
             <div className='main-rating'>{mainProduct.rating}</div>
             <div className='main-button-price'>
               <h2>${mainProduct.price}</h2>
               <button
                 onSubmit={handleAddToCart(mainProduct)}
-                className='main-button'
+                className='save-main-button'
                 type='button'>
                 Add to Cart
               </button>
@@ -130,7 +138,7 @@ const Product = ({ match }) => {
         </div>
       </div>
 
-      {/* <div className='productContainer'>{displayOtherProducts()}</div> */}
+      <div className='productContainer'>{displayOtherProducts()}</div>
     </div>
   );
 };
