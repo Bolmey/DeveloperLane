@@ -24,6 +24,7 @@ const actions = {
   //post product to user
   userPost: async (product) => {
     let user = await axios.post(`${serverUrl}/post-to-user`, { product }, createHeaders())
+    console.log(user)
     return user
   },
 

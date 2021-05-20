@@ -63,7 +63,7 @@ const Product = ({ match }) => {
 
   function handleAddToCart(product) {
     actions.userPost(product)
-      .then(res => console.log(res))
+    //.then(res => console.log(res))
     //.then((res) => setUserProducts([...userProducts, res.data]))
 
   }
@@ -87,7 +87,7 @@ const Product = ({ match }) => {
               <div className='rating'>{product.rating}</div>
               <div className='button-price'>
                 <h2>${product.price}</h2>
-                <button onSubmit={handleAddToCart(product)} className='button' type='button'>
+                <button onClick={handleAddToCart(product)} className='button' type='button'>
                   Add to Cart
                 </button>
               </div>
@@ -121,7 +121,7 @@ const Product = ({ match }) => {
             <div className='main-rating'>{mainProduct.rating}</div>
             <div className='main-button-price'>
               <h2>${mainProduct.price}</h2>
-              <button onSubmit={handleAddToCart(mainProduct)} className='main-button' type='button'>
+              <button onClick={handleAddToCart(mainProduct)} className='main-button' type='button'>
                 Add to Cart
               </button>
             </div>
