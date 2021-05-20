@@ -50,7 +50,7 @@ const Product = ({ match }) => {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [match]);
 
   //get list of products from user
   // useEffect(() => {
