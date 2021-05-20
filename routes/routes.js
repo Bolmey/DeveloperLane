@@ -37,37 +37,36 @@ const Chairs = require('../models/Chairs');
 //     res.json({ serverWorks: true })
 // })
 
-
-
 //post product to user
 router.post(`/post-to-user`, authorize, (req, res) => {
-  console.log(req)
-  console.log(req.body)
-  let msg = req.body
-  msg.ownerId = res.locals.user._id
+  let msg = req.body;
+  msg.ownerId = res.locals.user._id;
   //User.findOneAndUpdate(msg).then(message => res.json(message))
-})
+});
 
 // ---- Products ---- //
 
 // PCs
 router.get('/get-main-PC', async (req, res) => {
+  console.log('get main pc');
   let PC = await PCs.find({ best: true });
+  // console.log(PC, '???');
   res.json(PC);
 });
 router.get('/get-other-PCs', async (req, res) => {
-  let PCs = await PCs.find({ best: false });
-  res.json(PCs);
+  let PC = await PCs.find({ best: false });
+  res.json(PC);
 });
 
 // Mouse
 router.get('/get-main-mouse', async (req, res) => {
-  let mouse = await Mouse.find({ best: true });
-  res.json(mouse);
+  let mice = await Mouse.find();
+  console.log('something', mice);
+  res.json(mice);
 });
 router.get('/get-other-mouse', async (req, res) => {
-  let mouses = await Mouse.find({ best: false });
-  res.json(mouses);
+  let mice = await Mouse.find({ best: false });
+  res.json(mice);
 });
 
 // Chairs
@@ -123,23 +122,22 @@ router.get('/get-other-keyboards', async (req, res) => {
 // })
 
 function authorize(req, res, next) {
-  console.log('monkey in the mittle', req.headers)
+  // console.log('monkey in the mittle', req.headers);
   if (req.headers.authorization) {
-    let token = req.headers.authorization.split(' ')[1]
-    console.log(token)
+    let token = req.headers.authorization.split(' ')[1];
+    // console.log(token);
     jwt.verify(token, 'secret', async (err, data) => {
       if (!err) {
-        console.log(data)
-        res.locals.user = data.user
-        next()
+        // console.log(data);
+        res.locals.user = data.user;
+        next();
       } else {
-        console.error(err)
-        res.json({ err })
+        console.error(err);
+        res.json({ err });
       }
-    })
+    });
   } else {
-    res.status(403).json({ message: 'You dont have no token' })
+    res.status(403).json({ message: 'You dont have no token' });
   }
-
 }
 module.exports = router;

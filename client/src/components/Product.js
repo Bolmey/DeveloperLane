@@ -14,12 +14,15 @@ const Product = ({ match }) => {
     let path = match.path;
     let responseMain;
     let responseOther;
+    console.log(path, 'path');
     switch (path) {
       case '/computers':
         responseMain = await actions.getMainPC();
         responseOther = await actions.getOtherPCs();
+        console.log('testtttt:', responseMain, responseOther);
         setMainProduct(responseMain[0]);
         setOtherProducts(responseOther);
+
         break;
       case '/mouse':
         responseMain = await actions.getMainMouse();
@@ -38,6 +41,8 @@ const Product = ({ match }) => {
         responseOther = await actions.getOtherChairs();
         setMainProduct(responseMain[0]);
         setOtherProducts(responseOther);
+        console.log('chairs:', responseMain, responseOther);
+
         break;
       case '/monitors':
         responseMain = await actions.getMainMonitor();
@@ -50,7 +55,8 @@ const Product = ({ match }) => {
 
   useEffect(() => {
     getProducts();
-  }, []);
+    console.log('useEffect test');
+  }, [match]);
 
   //get list of products from user
   // useEffect(() => {
@@ -63,6 +69,8 @@ const Product = ({ match }) => {
     actions.userPost(product).then((res) => console.log(res));
     //.then((res) => setUserProducts([...userProducts, res.data]))
   }
+
+  console.log('mainProduct:', mainProduct);
 
   function displayOtherProducts() {
     return otherProducts.map((product) => {
@@ -111,7 +119,7 @@ const Product = ({ match }) => {
           <div
             className='main-picture'
             style={{
-              backgroundImage: `url(${mainProduct.image})`,
+              backgroundImage: `url(${mainProduct?.image})`,
               backgroundPosition: `center`,
               backgroundSize: '100%'
             }}></div>
@@ -119,14 +127,14 @@ const Product = ({ match }) => {
         </div>
         <div className='main-details-container'>
           <div className='main-text-container'>
-            <h1 className='main-product-name'>{mainProduct.name}</h1>
-            <p>{mainProduct.description}</p>
+            <h1 className='main-product-name'>{mainProduct?.name}</h1>
+            <p>{mainProduct?.description}</p>
           </div>
           <div className='main-button-price-container'>
             {/* <i class='fas fa-star'></i> */}
-            <div className='main-rating'>{mainProduct.rating}</div>
+            <div className='main-rating'>{mainProduct?.rating}</div>
             <div className='main-button-price'>
-              <h2>${mainProduct.price}</h2>
+              <h2>${mainProduct?.price}</h2>
               <button
                 onSubmit={handleAddToCart(mainProduct)}
                 className='save-main-button'
