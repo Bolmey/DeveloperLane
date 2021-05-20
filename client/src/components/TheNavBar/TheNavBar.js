@@ -43,22 +43,34 @@ function TheNavBar({ auth: { isAuthenticated, loading }, logout }) {
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className='mr-auto navbar-links'>
           <Nav.Link>
-            <Link to='/bundles'>Bundles </Link>
+            <Link className='navlink' to='/bundles'>
+              Bundles{' '}
+            </Link>
           </Nav.Link>
           <Nav.Link>
-            <Link to='/computers'>Computers </Link>
+            <Link className='navlink' to='/computers'>
+              Computers{' '}
+            </Link>
           </Nav.Link>
           <Nav.Link>
-            <Link to='/monitors'>Monitors</Link>
+            <Link className='navlink' to='/monitors'>
+              Monitors
+            </Link>
           </Nav.Link>
           <Nav.Link>
-            <Link to='/keyboards'>Keyboards</Link>
+            <Link className='navlink' to='/keyboards'>
+              Keyboards
+            </Link>
           </Nav.Link>
           <Nav.Link>
-            <Link to='/mouse'>Mouse</Link>
+            <Link className='navlink' to='/mouse'>
+              Mouse
+            </Link>
           </Nav.Link>
           <Nav.Link>
-            <Link to='/chairs'>Chairs</Link>
+            <Link className='navlink' to='/chairs'>
+              Chairs
+            </Link>
           </Nav.Link>
           {!loading && (
             <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>

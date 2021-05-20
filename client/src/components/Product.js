@@ -55,7 +55,6 @@ const Product = ({ match }) => {
 
   useEffect(() => {
     getProducts();
-    console.log('useEffect test');
   }, [match]);
 
   //get list of products from user
