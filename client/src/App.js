@@ -43,7 +43,6 @@ const App = () => {
           <Route exact path='/mouse' component={Product} />
           <Route exact path='/monitors' component={Product} />
           <Route exact path='/chairs' component={Product} />
-          <Route exact path='/bundles' component={Product} />
           <Route exact path='/computers' component={Product} />
           <Route exact path='/cart' component={Product} />
         </Switch>

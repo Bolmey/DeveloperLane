@@ -11,11 +11,18 @@ import { logout } from '../../actions/auth';
 
 function TheNavBar({ auth: { isAuthenticated, loading }, logout }) {
   const authLinks = (
-    <Link to='/login'>
-      <Button onClick={logout} className='login-button' variant='secondary'>
-        Logout
-      </Button>
-    </Link>
+    <Fragment>
+      <Link to='/login'>
+        <Button onClick={logout} className='login-button' variant='secondary'>
+          Logout
+        </Button>
+      </Link>
+      <Link to='/cart'>
+        <Button className='login-button' variant='secondary'>
+          Saved Items
+        </Button>
+      </Link>
+    </Fragment>
   );
 
   const guestLinks = (
@@ -42,11 +49,6 @@ function TheNavBar({ auth: { isAuthenticated, loading }, logout }) {
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className='mr-auto navbar-links'>
-          <Nav.Link>
-            <Link className='navlink' to='/bundles'>
-              Bundles{' '}
-            </Link>
-          </Nav.Link>
           <Nav.Link>
             <Link className='navlink' to='/computers'>
               Computers{' '}
