@@ -25,7 +25,7 @@ p {
 
 .main-product-container {
   width: 100%;
-  height: 500px;
+  height: 550px;
   max-width: 560px;
   background-color: rgb(16, 16, 16);
 }
@@ -48,6 +48,10 @@ p {
   background-repeat: no-repeat;
 }
 
+.main-price-raiting{
+  align-self: flex-end;
+}
+
 .main-details-container {
   height: 250px;
   display: flex;
@@ -55,11 +59,17 @@ p {
   justify-content: space-between;
 }
 
+.main-button-price{
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-evenly;
+}
+
 .main-button-price-container {
   display: flex;
   justify-content: space-between;
   margin: 8px;
-  
 }
 
 .main-button {
@@ -101,6 +111,10 @@ p {
   height: 250px;
 }
 
+.other-raiting-price{
+  align-self: flex-end;
+}
+
 .other-picture {
   height: 100%;
   width: 100%;
@@ -112,6 +126,13 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.button-price{
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-evenly;
 }
 
 .other-button-price-container {
@@ -250,7 +271,7 @@ p {
   }
 }
 
-.button {
+.button, .save-main-button{
   border: none;
   background: #1619ef;
   background: -moz-linear-gradient(left, #1619ef 0%, #9b39cb 56%, #8b0b9b 100%);
@@ -262,6 +283,7 @@ p {
   );
   background: linear-gradient(to right, #1619ef 0%, #9b39cb 56%, #8b0b9b 100%);
   color: white;
-  width: 150px;
+  width: 160px;
+  border-radius: 5px;
   height: 30px;
 }

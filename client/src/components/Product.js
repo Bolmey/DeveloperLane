@@ -104,6 +104,56 @@ const Product = ({ match }) => {
   }
 
 
+  function displayMainProduct() {
+    return (
+      <div className='main-product-container'>
+        <div className='main-heading'>
+          <h1>{pageHeader}</h1>
+        </div>
+        <div className='main-product-img'>
+          <div
+            className='main-picture'
+            style={{
+              backgroundImage: `url(${mainProduct?.image})`,
+              backgroundPosition: `center`,
+              backgroundSize: '100%'
+            }}></div>
+          {/* <img src={mainProduct.image} /> */}
+        </div>
+        <div className='main-details-container'>
+          <div className='main-text-container'>
+            <h1 className='main-product-name'>{mainProduct?.name}</h1>
+            <p>{mainProduct?.description}</p>
+          </div>
+          <div className='main-button-price-container'>
+            {/* <i class='fas fa-star'></i> */}
+            <div className='main-price-raiting'>
+              <div className='main-rating'>Raiting: {mainProduct?.rating}</div>
+              <h2>${mainProduct?.price}</h2>
+            </div>
+            <div className='main-button-price'>
+              {match.path !== '/cart' && (
+                <button
+                  onSubmit={handleAddToCart(mainProduct)}
+                  className='save-main-button'
+                  type='button'>
+                  Add to Cart
+                </button>
+              )}
+              <a
+                href={mainProduct.amazon}
+                target='_blank'
+                rel='noopener noreferrer'
+                style={{ border: 'none', textDecoration: 'none' }}>
+                <img src='https://www.niftybuttons.com/amazon/amazon-button2.png' />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   function displayOtherProducts() {
     return otherProducts.map((product) => {
       return (
@@ -124,12 +174,26 @@ const Product = ({ match }) => {
               <p>{product.description}</p>
             </div>
             <div className='other-button-price-container'>
-              <div className='rating'>Rating: {product.rating}</div>
-              <div className='button-price'>
+              <div className="other-raiting-price">
+                <div className='rating'>Raiting: {product.rating}</div>
                 <h2>${product.price}</h2>
-                {match.path !== '/cart' && <button onClick={() => handleAddToCart(product)} className='button' type='button'>
-                  Add to Cart
-                </button>}
+              </div>
+              <div className='button-price'>
+                {match.path !== '/cart' && (
+                  <button
+                    onSubmit={handleAddToCart(product)}
+                    className='button'
+                    type='button'>
+                    Add to Cart
+                  </button>
+                )}
+                <a
+                  href={product.amazon}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  style={{ border: 'none', textDecoration: 'none' }}>
+                  <img src='https://www.niftybuttons.com/amazon/amazon-button2.png' />
+                </a>
               </div>
             </div>
           </div>
@@ -140,7 +204,6 @@ const Product = ({ match }) => {
 
   return (
     <div className='body-container'>
-
       {match.path !== '/cart' && displayMainProduct()}
       <div className='productContainer'>{displayOtherProducts()}</div>
     </div>
