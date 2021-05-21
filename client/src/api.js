@@ -5,7 +5,7 @@ console.log(process.env);
 //Where your server/backend lives
 const serverUrl =
   process.env.NODE_ENV === 'production'
-    ? 'https://devlane.herokuapp.com/'
+    ? process.env.REACT_APP_SERVER_URL
     : `http://localhost:5000`;
 
 const createHeaders = () => {
