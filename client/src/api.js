@@ -5,7 +5,7 @@ console.log(process.env);
 //Where your server/backend lives
 const serverUrl =
   process.env.NODE_ENV === 'production'
-    ? process.env.REACT_APP_SERVER_URL
+    ? 'https://devlane.herokuapp.com/'
     : `http://localhost:5000`;
 
 const createHeaders = () => {
@@ -23,9 +23,13 @@ const actions = {
 
   //post product to user
   userPost: async (product) => {
-    let user = await axios.post(`${serverUrl}/post-to-user`, { product }, createHeaders())
-    console.log(user)
-    return user
+    let user = await axios.post(
+      `${serverUrl}/post-to-user`,
+      { product },
+      createHeaders()
+    );
+    console.log(user);
+    return user;
   },
 
   getMessages: async () => {
