@@ -94,9 +94,11 @@ const Product = ({ match }) => {
           </div>
           <div className='main-button-price-container'>
             {/* <i class='fas fa-star'></i> */}
-            <div className='main-rating'>{mainProduct?.rating}</div>
-            <div className='main-button-price'>
+            <div className='main-price-raiting'>
+              <div className='main-rating'>Raiting: {mainProduct?.rating}</div>
               <h2>${mainProduct?.price}</h2>
+            </div>
+            <div className='main-button-price'>
               {match.path !== '/cart' && (
                 <button
                   onSubmit={handleAddToCart(mainProduct)}
@@ -139,9 +141,11 @@ const Product = ({ match }) => {
               <p>{product.description}</p>
             </div>
             <div className='other-button-price-container'>
-              <div className='rating'>{product.rating}</div>
-              <div className='button-price'>
+              <div className="other-raiting-price">
+                <div className='rating'>Raiting: {product.rating}</div>
                 <h2>${product.price}</h2>
+              </div>
+              <div className='button-price'>
                 {match.path !== '/cart' && (
                   <button
                     onSubmit={handleAddToCart(product)}
