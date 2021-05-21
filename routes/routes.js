@@ -15,11 +15,7 @@ const Chairs = require('../models/Chairs');
 //     Message.create(msg).then(message => res.json(message))
 // })
 
-// router.get(`/get-user`, authorize, async (req, res) => {
-//     //console.log("in get user after next", res.locals.user._id)
-//     let user = await User.findById(res.locals.user._id)
-//     res.json(user)
-// })
+
 
 // router.post('/signUp', (req, res) => {
 //     console.log(req.body)
@@ -37,12 +33,22 @@ const Chairs = require('../models/Chairs');
 //     res.json({ serverWorks: true })
 // })
 
-//post product to user
+
+// Fetch user data
+router.get(`/get-user`, authorize, async (req, res) => {
+  //console.log("in get user after next", res.locals.user._id)
+  let userid = res.locals.user.id
+  let user = await User.find({ _id: userid })
+  res.json(user)
+})
+
+//  ADD PRODUCT TO CART
 router.post(`/post-to-user`, authorize, (req, res) => {
-  let msg = req.body;
-  msg.ownerId = res.locals.user._id;
-  //User.findOneAndUpdate(msg).then(message => res.json(message))
-});
+  let product = req.body.product
+  let productName = product.name
+  let userid = res.locals.user.id
+  User.findOneAndUpdate({ _id: userid }, { $push: { products: product } }).then(resp => res.json(resp))
+})
 
 // ---- Products ---- //
 
@@ -124,16 +130,15 @@ router.get('/get-other-keyboards', async (req, res) => {
 function authorize(req, res, next) {
   // console.log('monkey in the mittle', req.headers);
   if (req.headers.authorization) {
-    let token = req.headers.authorization.split(' ')[1];
-    // console.log(token);
+    let token = req.headers.authorization.split(' ')[1]
+    console.log('token ', token)
     jwt.verify(token, 'secret', async (err, data) => {
       if (!err) {
-        // console.log(data);
-        res.locals.user = data.user;
-        next();
+        res.locals.user = data.user
+        next()
       } else {
-        console.error(err);
-        res.json({ err });
+        console.error('err ', err)
+        res.json({ err })
       }
     });
   } else {
