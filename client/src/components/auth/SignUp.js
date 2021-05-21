@@ -6,6 +6,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { setAlert } from '../../actions/alert';
 import { register } from '../../actions/auth';
 import PropTypes from 'prop-types';
+import './auth.css'
 
 const SignUp = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -35,59 +36,65 @@ const SignUp = ({ setAlert, register, isAuthenticated }) => {
   }
 
   return (
-    <Fragment>
-      <h1>Sign Up</h1>
-      <Form onSubmit={onSubmit}>
-        <Form.Group>
-          <Form.Label>Full Name</Form.Label>
-          <Form.Control
-            name='name'
-            value={name}
-            onChange={(e) => onChange(e)}
-            placeholder='Full name'
-          />
-        </Form.Group>
-        <Form.Group controlId='formGroupEmail'>
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            name='email'
-            value={email}
-            onChange={(e) => onChange(e)}
-            type='email'
-            placeholder='Enter email'
-          />
-        </Form.Group>
-        <Form.Group controlId='formGroupPassword'>
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            name='password'
-            value={password}
-            onChange={(e) => onChange(e)}
-            type='password'
-            placeholder='Password'
-          />
-          <Form.Text className='text-muted'>
-            Password must be at least 6 characters
+    <div className='main-signup'>
+      <div className='container-signup'>
+
+
+        <Fragment>
+          <h1>Sign Up</h1>
+          <Form onSubmit={onSubmit}>
+            <Form.Group>
+              <Form.Label>Full Name</Form.Label>
+              <Form.Control
+                name='name'
+                value={name}
+                onChange={(e) => onChange(e)}
+                placeholder='Full name'
+              />
+            </Form.Group>
+            <Form.Group controlId='formGroupEmail'>
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                name='email'
+                value={email}
+                onChange={(e) => onChange(e)}
+                type='email'
+                placeholder='Enter email'
+              />
+            </Form.Group>
+            <Form.Group controlId='formGroupPassword'>
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                name='password'
+                value={password}
+                onChange={(e) => onChange(e)}
+                type='password'
+                placeholder='Password'
+              />
+              <Form.Text className='text-muted'>
+                Password must be at least 6 characters
           </Form.Text>
-        </Form.Group>
-        <Form.Group controlId='formGroupPassword'>
-          <Form.Label>Confirm Password</Form.Label>
-          <Form.Control
-            name='password2'
-            value={password2}
-            onChange={(e) => onChange(e)}
-            type='password'
-            placeholder='Confirm Password'
-          />
-        </Form.Group>
-        <Button type='submit' variant='secondary'>
-          Sign Up
+            </Form.Group>
+            <Form.Group controlId='formGroupPassword'>
+              <Form.Label>Confirm Password</Form.Label>
+              <Form.Control
+                name='password2'
+                value={password2}
+                onChange={(e) => onChange(e)}
+                type='password'
+                placeholder='Confirm Password'
+              />
+            </Form.Group>
+            <Button type='submit' variant='secondary'>
+              Sign Up
         </Button>
-      </Form>
-      <Form.Text className='text-muted'>
-        Already have an account? <Link to='/login'>Sign In</Link>
-      </Form.Text>
-    </Fragment>
+          </Form>
+          <Form.Text className='text-muted'>
+            Already have an account? <Link to='/login'>Sign In</Link>
+          </Form.Text>
+        </Fragment>
+      </div>
+    </div>
   );
 };
 

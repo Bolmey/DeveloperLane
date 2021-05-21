@@ -1,0 +1,22 @@
+.main-container-login {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+   
+}
+
+.container-login{
+width: 360px;
+}
+
+.main-signup{
+    display: flex;
+    
+   justify-content: center;
+    width: 100%;
+}
+
+.container-signup{
+    width: 360px;
+
+}

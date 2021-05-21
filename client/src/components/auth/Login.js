@@ -5,6 +5,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../actions/auth';
+import './auth.css'
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -30,37 +31,41 @@ const Login = ({ login, isAuthenticated }) => {
   }
 
   return (
-    <Fragment>
-      <h1>Sign In</h1>
-      <Form onSubmit={onSubmit}>
-        <Form.Group controlId='formGroupEmail'>
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            name='email'
-            value={email}
-            onChange={(e) => onChange(e)}
-            type='email'
-            placeholder='Enter email'
-          />
-        </Form.Group>
-        <Form.Group controlId='formGroupPassword'>
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            name='password'
-            value={password}
-            onChange={(e) => onChange(e)}
-            type='password'
-            placeholder='Password'
-          />
-        </Form.Group>
-        <Button type='submit' variant='secondary'>
-          Sign In
+    <div className='main-container-login'>
+      <div className='container-login'>
+        <Fragment>
+          <h1>Sign In</h1>
+          <Form onSubmit={onSubmit}>
+            <Form.Group controlId='formGroupEmail'>
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                name='email'
+                value={email}
+                onChange={(e) => onChange(e)}
+                type='email'
+                placeholder='Enter email'
+              />
+            </Form.Group>
+            <Form.Group controlId='formGroupPassword'>
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                name='password'
+                value={password}
+                onChange={(e) => onChange(e)}
+                type='password'
+                placeholder='Password'
+              />
+            </Form.Group>
+            <Button type='submit' variant='secondary'>
+              Sign In
         </Button>
-      </Form>
-      <Form.Text className='text-muted'>
-        Don't have an account? <Link to='/signup'>Sign Up</Link>
-      </Form.Text>
-    </Fragment>
+          </Form>
+          <Form.Text className='text-muted'>
+            Don't have an account? <Link to='/signup'>Sign Up</Link>
+          </Form.Text>
+        </Fragment>
+      </div>
+    </div>
   );
 };
 
