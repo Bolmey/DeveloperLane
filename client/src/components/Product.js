@@ -131,7 +131,7 @@ const Product = ({ match }) => {
             <div className='main-button-price'>
               {match.path !== '/cart' && (
                 <button
-                  onSubmit={() => handleAddToCart(mainProduct)}
+                  onClick={() => handleAddToCart(mainProduct)}
                   className='save-main-button'
                   type='button'>
                   Add to Cart
@@ -178,7 +178,7 @@ const Product = ({ match }) => {
               <div className='button-price'>
                 {match.path !== '/cart' && (
                   <button
-                    onSubmit={() => handleAddToCart(product)}
+                    onClick={() => handleAddToCart(product)}
                     className='button'
                     type='button'>
                     Add to Cart
