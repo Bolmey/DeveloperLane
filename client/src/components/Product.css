@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .body-container {
   width: 100%;
   flex-direction: column;
@@ -30,7 +36,7 @@ p {
   background-color: rgb(16, 16, 16);
 }
 
-.main-text-container{
+.main-text-container {
   margin: 8px;
 }
 
@@ -48,7 +54,7 @@ p {
   background-repeat: no-repeat;
 }
 
-.main-price-raiting{
+.main-price-raiting {
   align-self: flex-end;
 }
 
@@ -59,7 +65,7 @@ p {
   justify-content: space-between;
 }
 
-.main-button-price{
+.main-button-price {
   display: flex;
   flex-direction: column;
   height: 100px;
@@ -111,7 +117,7 @@ p {
   height: 250px;
 }
 
-.other-raiting-price{
+.other-raiting-price {
   align-self: flex-end;
 }
 
@@ -128,7 +134,7 @@ p {
   justify-content: space-between;
 }
 
-.button-price{
+.button-price {
   display: flex;
   flex-direction: column;
   height: 100px;
@@ -223,7 +229,7 @@ p {
 
   /* ----- Other Products ----- */
 
-  .other-text-container{
+  .other-text-container {
     margin: 8px;
   }
 
@@ -271,7 +277,8 @@ p {
   }
 }
 
-.button, .save-main-button{
+.button,
+.save-main-button {
   border: none;
   background: #1619ef;
   background: -moz-linear-gradient(left, #1619ef 0%, #9b39cb 56%, #8b0b9b 100%);

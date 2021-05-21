@@ -7,10 +7,8 @@ const Product = ({ match }) => {
   const [otherProducts, setOtherProducts] = useState([]);
   const [userProducts, setUserProducts] = useState([]);
 
-
   let temp = match.path.slice(1, match.path.length);
   let pageHeader = temp.charAt(0).toUpperCase() + temp.slice(1);
-
 
   async function getProducts() {
     let path = match.path;
@@ -49,8 +47,9 @@ const Product = ({ match }) => {
         setOtherProducts(responseOther);
         break;
       case '/cart':
-        await actions.getUser()
-          .then(res => setOtherProducts(res.data[0].products))
+        await actions
+          .getUser()
+          .then((res) => setOtherProducts(res.data[0].products));
         break;
     }
   }
@@ -59,13 +58,9 @@ const Product = ({ match }) => {
     getProducts();
   }, [match]);
 
-
-
   function handleAddToCart(product) {
-    actions.userPost(product)
-      .then((res) => setUserProducts(res.data.products))
+    actions.userPost(product).then((res) => setUserProducts(res.data.products));
   }
-
 
   function displayMainProduct() {
     return (
@@ -93,16 +88,18 @@ const Product = ({ match }) => {
             <div className='main-rating'>Rating: {mainProduct?.rating}</div>
             <div className='main-button-price'>
               <h2>${mainProduct.price}</h2>
-              <button onClick={() => handleAddToCart(mainProduct)} className='main-button' type='button'>
+              <button
+                onClick={() => handleAddToCart(mainProduct)}
+                className='main-button'
+                type='button'>
                 Add to Cart
-            </button>
+              </button>
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
-
 
   function displayMainProduct() {
     return (
@@ -174,7 +171,7 @@ const Product = ({ match }) => {
               <p>{product.description}</p>
             </div>
             <div className='other-button-price-container'>
-              <div className="other-raiting-price">
+              <div className='other-raiting-price'>
                 <div className='rating'>Raiting: {product.rating}</div>
                 <h2>${product.price}</h2>
               </div>
